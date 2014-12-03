@@ -96,7 +96,7 @@
     
     self.rightItem = [[Weapon alloc] init];
     self.rightItem.name = [itemInfo objectForKey:@"Name"];
-    self.rightItem.description = [itemInfo objectForKey:@"Description"];
+    self.rightItem.info = [itemInfo objectForKey:@"Description"];
     self.rightItem.value = [[itemInfo objectForKey:@"Value"] intValue];
     self.rightItem.dashAttackCount = [[itemInfo objectForKey:@"DashAttacks"] count];
     self.rightItem.groundAttackCount = [[itemInfo objectForKey:@"GroundAttacks"] count];

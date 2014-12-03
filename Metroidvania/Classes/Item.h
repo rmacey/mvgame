@@ -11,7 +11,7 @@
 @interface Item : NSObject
 
 @property(nonatomic,assign)NSString *name;
-@property(nonatomic,assign)NSString *description;
+@property(nonatomic,assign)NSString *info;
 @property(nonatomic,assign)int value;
 
 @end
