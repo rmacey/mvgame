@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Damage</key>
+	<integer>8</integer>
+	<key>Knockback</key>
+	<integer>300</integer>
+	<key>Stun</key>
+	<integer>30</integer>
+	<key>IASA</key>
+	<integer>34</integer>
+	<key>Element</key>
+	<string>physical</string>
+	<key>AttackSoundName</key>
+	<string>Slide</string>
+	<key>TotalPossibleSounds</key>
+	<integer>1</integer>
+	<key>AnimationFramesCount</key>
+	<integer>3</integer>
+	<key>AnimationSpriteName</key>
+	<string>ninjaDashAttack</string>
+	<key>TotalFrames</key>
+	<integer>50</integer>
+	<key>OwnerSizeAdjustment</key>
+	<array>
+		<string>1</string>
+		<string>0.55</string>
+	</array>
+	<key>HitBoxTransformations</key>
+	<dict>
+		<key>8</key>
+		<array>
+			<array>
+				<integer>30</integer>
+				<integer>-30</integer>
+			</array>
+			<array>
+				<integer>20</integer>
+				<integer>18</integer>
+			</array>
+		</array>
+		<key>27</key>
+		<array>
+			<array>
+				<integer>0</integer>
+				<integer>0</integer>
+			</array>
+			<array>
+				<integer>0</integer>
+				<integer>0</integer>
+			</array>
+		</array>
+	</dict>
+	<key>SpecialProperties</key>
+	<dict>
+		<key>HorizontalImpulse</key>
+		<integer>3000</integer>
+		<key>NoMove</key>
+		<string>NoMove</string>
+	</dict>
+</dict>
+</plist>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="70" height="20" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="undergroundMines" tilewidth="32" tileheight="32">
+  <image source="../../../../../../undergroundMines.png" width="8634" height="5898"/>
+ </tileset>
+ <layer name="Background" width="70" height="20">
+  <data encoding="base64" compression="zlib">
+   eJzdmEdvFTEQx43Sk5eEkgT4AsCdBJK83fXb93bf7r4DfIDQjtQj9Ug9Uo/UI/VIvSBRL0hUISFRhYREFQiJeuBv7fxlw4EP4MNP3p21x/bseGxPUyuVgibQoAEiUAdhpFQNZVW+ByADidQzspY8J/JcSP1Q9OW61GF0GSLpL5b2oZS56K9L+0J0htI+oA6RUUdDxpRKu7roqzvzCpzxNEUeyHshz1d77ThS6dPonT+k1AIw1abUMrAcrAArwao2f+UNscudvtJOidgll/8wOqzUGFjdrtQasBasA+vBhnZ/5YmsjyeV0t9a4lOJ+Fw8ghJs7FBqE9gMtoCtYFuHv3Kupzf9pS0yrntZo0tmK7UUbO9UagfYCXaB3WBPp79yxqGvA6UdCvEZxtKpOVh/YG+XUvvAfnAAHASHuvyVx2KLadPL9ZM5+0/qxN3D3UodAUfBMXAcnOj2V56JLUzcDSXeuvso4+7JHqVOgdPgDDgLzvX4K48lvpq4m4pNWtyPnLh7Hvv4BXARXAKXwZVef+W0g4m73I8i51zFuHsN/nQd3AA3wS1wu89feUv8xcTdVGIK7RI5cfcu/OkeuA8egIfgUcVfOfcfE3djWUeB2KThxN2n8Kdn4Dl4AV6CV/3+ys38H8M+lRnlM+8WvIMw7r6FP70D78EH8BF8GvBXbmLKa9hn7sxy/2Hszf45734bVOo7+AF+gl/g96C/8kD8Zd6s0l+0tntU6MTdcfjMBJgEVRCAcNhfeUP8ZeGQtUci9gmduJvCZ5ogAzkoQGvEX7nZiz9jPX0ZKONvJmcX5jtGcaceA4vAYjAOJsCkU/6vjg/f/vIVec+cfE4mPtSStZYLiRBrm7PivZP7PvNUhejKRV5z2vJ7KGXh9J/LeyTvDanHXJXpNxU5z2RN0Vtz7jaJtvksjt20zZx5MfeSOTo414bAPFWubR6OfdW1Pf8wZ8b8TU3bM0DqtGH/1J84dWkv2ok5PP4j2oJ1Imfs7Jd20WyrnfN7ZMdLuzBnyHXCHB7l1Ml8Jc91VccPuE9Vtc0t8q4ZaJvXzJz/zZgVS52aPMdOP7y7Vp3/x9xjoO2ZwbU9bcQ9tKqtn8TazpPnd86zkDGyL86b/6upbR3mN2kro+8PsvJHgw==
+  </data>
+ </layer>
+ <layer name="Walls" width="70" height="20">
+  <data encoding="base64" compression="zlib">
+   eJztlkkKwlAQRBt1Z+I8xQPoAbyAazXOE24VdOsxvUDAdcB1IBew1PXv6MK28edBraoJ9T9JpYleDDJEQ2gE+dAYmkBTaAbNoQW0hFbQ+o3Zd571rZlPznHIkpENvC3j/yt7nPmcM/u3glwWTVzy/L3ERbksmggcoqvDDJTFoqgidPGtuGbfrchl0USE/oiZDrG5X6hk9m3uF5frEIv7pc10iM390q2a/U5NLosmkvaXXl0uiyYCbncB/YZMDm08/0cMflMmhzaS3pddSyaHNkJm131w9IhOnkwWTUSW7rMpKSm/4w62Qi4X
+  </data>
+ </layer>
+ <objectgroup name="MapTransitions" width="70" height="20">
+  <object name="exit" type="exit" x="2112" y="352" width="32" height="160">
+   <properties>
+    <property name="destination" value="HallOfCandles.tmx"/>
+    <property name="destinationHeight" value="32"/>
+    <property name="startx" value="1"/>
+    <property name="starty" value="27"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

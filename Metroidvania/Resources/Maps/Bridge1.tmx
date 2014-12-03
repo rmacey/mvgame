@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="47" height="25" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="MagicSword1" tilewidth="32" tileheight="32">
+  <image source="MagicSword1.png" width="1900" height="700"/>
+ </tileset>
+ <layer name="Background" width="47" height="25">
+  <data encoding="base64" compression="zlib">
+   eJzt1kkSgjAQhWGiF3D2KM5ewNlDqTgcytlDOf3u1MJQSKh0aV7xbWigOlmQ9rzXZJBFDnkUUEQJZQF1XTroooc+BhhihLGAui4TTDGDjzkWWGIloO56d7273n+j97D3Jfeue1dy72tssMUOexxwxElAXZczLrji9rihuJBCWtmvu8iNyXkvydkxKCbnvSRnx6CY/Jcl9V+0fU6+18Oefz5nJK8jyrlkch2212B7n6OuIc73vq3F2WvbM8q/zjAV6lXUUEcDTbTQVvbrn3IHkwS0+w==
+  </data>
+ </layer>
+ <layer name="Background2" width="47" height="25">
+  <data encoding="base64" compression="zlib">
+   eJztyTEBAAAMAiBXbP1jmcAG8JIAAAAAwPa3rxk/AEA=
+  </data>
+ </layer>
+ <layer name="Meta" width="47" height="25">
+  <data encoding="base64" compression="zlib">
+   eJztzjENAAAIA7AFG/j3iYqFp1XQBAD6dr4HAABAwwFsJQAe
+  </data>
+ </layer>
+ <layer name="Walls" width="47" height="25">
+  <data encoding="base64" compression="zlib">
+   eJztkUEKgCAQRfUMta1swNt0iO5/ily4sFno0BBBvAd/I/rnMYYAAAAAAF+R4z1njT63ZnO8tfRJk5H7VDLH8Q6Wcmets1Kn/2nfrrx77oeh3/qX2dnXdlrcxTFL70de6sMdd9xxx/2f7hdRqSts
+  </data>
+ </layer>
+ <layer name="Foreground" width="47" height="25">
+  <data encoding="base64" compression="zlib">
+   eJztljsOwjAQRB0DDT1/RMcx+DSUQEvgIhCuwb24B6dgyi3sMMQr5I2w9Drv7MQab+y9cx3QBT2Q+/LC7wqswQZsjXm/ghuowN2Yd//PzM+W5czIs7aWGXnW1jIjvVvLjPRrLTMyJ23KzMvlTV1mlkXetDUzsTXANw/BCIzBBEzBDMyL7z001WPnzB4aB3AkvJ2wpwRncIns19Bj/k2Lz/LRFarV0mPeM2VCr1Ctlh7zBn4k9ArVaukxc+aZ0CtUq6XHzJl+g9lRV6ulx8yZXUKvUK2WHuM917vKzMhc7yqTdwt39Q3Pr3BA
+  </data>
+ </layer>
+ <objectgroup name="MapTransitions" width="47" height="25">
+  <object name="exit" type="exit" x="0" y="160" width="32" height="256">
+   <properties>
+    <property name="destination" value="OpulentHall.tmx"/>
+    <property name="destinationHeight" value="25"/>
+    <property name="startx" value="57"/>
+    <property name="starty" value="12"/>
+   </properties>
+  </object>
+  <object name="exit" type="exit" x="1472" y="160" width="32" height="256">
+   <properties>
+    <property name="destination" value="HallOfCandles.tmx"/>
+    <property name="destinationHeight" value="32"/>
+    <property name="startx" value="2"/>
+    <property name="starty" value="28"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

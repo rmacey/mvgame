@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Name</key>
+	<string>SimpleSword</string>
+	<key>Description</key>
+	<string>Basic sword for testing purposes</string>
+	<key>Value</key>
+	<integer>1</integer>
+	<key>GroundAttacks</key>
+	<array>
+		<string>ShortSlash2</string>
+		<string>ShortSlash1</string>
+		<string>SwordSlash1</string>
+	</array>
+	<key>DashAttacks</key>
+	<array>
+		<string>DashAttack2</string>
+	</array>
+	<key>AirAttacks</key>
+	<array>
+		<string>AirSlash1</string>
+	</array>
+	<key>CrouchAttacks</key>
+	<array>
+		<string>CrouchingSlash1</string>
+	</array>
+</dict>
+</plist>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="60" height="230" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="Modero" tilewidth="32" tileheight="32">
+  <image source="Modero.png" width="960" height="768"/>
+ </tileset>
+ <layer name="Background" width="60" height="230">
+  <data encoding="base64" compression="zlib">
+   eJztz8ERAUEURdHuDJCHSBAI4hskQh6DABRlqTBFddP/LM76vdullLoCpvm5Eh9K0qu3JXr1tkSv3pbo1dsSvXpboldvS6L0vuos3TzkDwAAAAAA8NgsmCUAAAAhbVIsRwAAvmqUY5kDAABwswpmmwAAAAAAAAAAfss+mBMAAAAAQCXjHMsCAAAAAABgoHUwuwQAAAAAUMchmDMAAABV9Xe1dmu6/pjkz0TrfVftVr3t9/YBewEA4B9cALT7uBA=
+  </data>
+ </layer>
+ <layer name="Parallax1" width="60" height="230">
+  <data encoding="base64" compression="zlib">
+   eJzt1UFuwjAQBVDnDC33aOEeFG4C7QWyRpXSfVvOymxQvSAJrkiM0HvSV5xobHmsREkJAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAqOWYUvsb+Yl8R2rvB4DH5H9DbU9NSs+RRVN7J3+m+i5eosfXyDKyuqN+p7KOHt8im8i2oN9d1O4j75GPG2Rovfx5Pt6NzBtav/T+K9Jl1/O4JENzLq3dU9+WpCusP2eyF+5Kh55e/9vP2BnV7veSsf1+Nv31XXZWXZb5uwAAAADmcgKBj4h9
+  </data>
+ </layer>
+ <layer name="Background 2" width="60" height="230">
+  <data encoding="base64" compression="zlib">
+   eJzt0WdOFWEYhuGT2YlYcA8iKoplCdgVKyzALgiK3X8WEMG6ApAixbYxn4ScxJiY8J0S0FxXcmcmmXnPmbxfrQYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPxLtlS1Wkfamral7WlH6kw7q9bNbBZ78n17077Uk/anA6k3HUyH0uF0pGpupkS7dnc5v3cinUyn0ul0Jp1N/elcOp8upIvpUtX4TN2u3Hel3am7Wv/umtnXvVzH0v10I91Mt9LtNJSG0500kkbT3ar5mbq+3B9Nx9Lxgt39fkal+/qQPqZPaTxNpNdpMr1JU2k6vU3v0vsWzNTfvZKupmvpeoO7K93X9/Qj/UzzaSEtpi9pKS2nlbSavqZvLZhZXJsbfp7ri/QyvWpwd6X72kgz+f/Z9DnNNbi70n39D0r2tdmNF3zjn++WzNJeAzmLwb+cRzuebbQH+a6H6VF6nJ6kp+lZ1dpnAADA+v0C2e2n7w==
+  </data>
+ </layer>
+ <layer name="Background 3" width="60" height="230">
+  <data encoding="base64" compression="zlib">
+   eJzt2ltu00AYBtBhJ+bSZbS4XQdQYBlAIbAKStoug8ub9wA8sRm+UiFVQyqnIcETco70SbY0nvkTOTN27FIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACA1lyUMpwnZ8k8mbqe2/qxZLt3+Wxvk1nyJnmdnGzh5wVYp8yDJfNhybxYZknmycv58r+Vda5kvStZ9y7XPwB2zHHyNHmWPJ+2lJUse+8DLdv232ELfIcAAEALPF/497b9uf6yPNcHYF08VwFgCl1yN7mX3E8eJHtTFrRB+8lB8jDpk8PkaMqCAAAAAPilK/6jAoBNydrTZ+3ps/b0fZK1pz+6WoY2In0PGWPIAEPGHDL2sD/yPt26a+xybK4t+lxb9Lm26HNt0e/d0N8q9f6WPof0PWSMIWMNGXPoljz2NjWuy9/Uy58uSpmdJ2fJ/OrV5K0Yp4X3i3ddV9q8/6nn4jX12fT9T3dtLp66lpt0pc3zZRVj81nr5wvTsG7B9A7uZG5O+uSw2h5rO7bfokep63HyJDmutuv667Zj+634mlq+Jd+TF8nL5FVyUm3X9ddtx/Zb9D51nSYfknm1Xddftx3bb9HH1PUp+Zx8qbbr+uu2Y/utuX5eLzJW/6Ljx/oEWMTcAQC75ye2L6/7
+  </data>
+ </layer>
+ <layer name="Walls" width="60" height="230">
+  <data encoding="base64" compression="zlib">
+   eJzt07lOw0AUQNHxVGwtn8E/T0PCJqDJF7BUQE8JdEBDRQkvIlAgWbaCjWPlHOkqSjIS84jfLKU066n9KqVJNI2anMaZs+i86u8+fXcRd7+MrlrMexNnbqO7Ec/7EHd/jJ5azPscZ16i1xHP+zGfM6dU5eZ5N+LMZrSVh7/3stnfevZ3fNnfevZ3fNnfevZ3fNnfevZ3fNnfevZ3fC2zv33fKf73JZ63EjtW4l6ly/fff2Ovxe+bFudi7hK/dYnnu8ROl67ft7sJAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACrYjuntJOHfb2v/m/etxXofc3m3c29j/lj6FnneZ77M/Ss6/g8T/JX0+ggOoyOouPoZPF5V98PPevvrhvu9NfvJUmS1G2fW5ZSoQ==
+  </data>
+ </layer>
+ <layer name="Foreground" width="60" height="230">
+  <data encoding="base64" compression="zlib">
+   eJzt1UFqAzEQBEDtvlxP0cXG/0jwOxTjfyRzM4KwvoSGLFUwp/GhR2zj1jJu2+Guh2LE3A/uvZ/w3ufBvc8T3rvvh7seCxKiv8uux4KE6O+y67EgIfq77HosSIj+LrseCxKiv8uux4KE6O/LGb9n/V12PRYk5Oz9/d7a+Kr5qLnUvP3/3dt8bG1+1lxrYkH/yt5G5R+Vf1T+8e7n9T6z3mfW+8zLf7wXAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAfvEDTps5Wg==
+  </data>
+ </layer>
+ <objectgroup name="MapTransitions" width="60" height="230">
+  <object name="Exit" type="Exit" x="832" y="0" width="256" height="32">
+   <properties>
+    <property name="destination" value="CryptShaft.tmx"/>
+    <property name="destinationHeight" value="100"/>
+    <property name="startx" value="11"/>
+    <property name="starty" value="95"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

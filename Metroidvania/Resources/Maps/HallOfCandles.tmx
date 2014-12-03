@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="75" height="32" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="Cathedral2Edited" tilewidth="32" tileheight="32">
+  <image source="Cathedral2Edited.png" width="1800" height="524"/>
+ </tileset>
+ <layer name="Background" width="75" height="32">
+  <data encoding="base64" compression="zlib">
+   eJztktEJgDAUxKTOoOgizqxbqZN4MxSPPOWO5rc0ocPw/rZWG50uHOt9S3Uco53Siscx2imteByjndKKxzHaKa14HKOd0orHMdoprXgco53Siscx2imteByjndKKxzHaKa14HKOd0orHMdoprXgco53Siscx2ukLrXZdeIh55L2qtzp14SXuxntVb7XoP61i+um/egCRchpR
+  </data>
+ </layer>
+ <layer name="Meta" width="75" height="32">
+  <data encoding="base64" compression="zlib">
+   eJztzkEJADAMBLD+KmuyZn8K+hschURBqgAAAAAAAACAXzodWOSkA4vcdAAYPS0JAL4=
+  </data>
+ </layer>
+ <layer name="Background 2" width="75" height="32">
+  <data encoding="base64" compression="zlib">
+   eJztmUsKwkAQBcN4ATejgpp7aC7gxg/4uYfJ1XIYj+PbpkkHyUwwi3pQ8Egzw9DULjEUxUqsxUZsxU7sRSniiHnK2TnNbc76dhFXcRN38RBP8Qrj5iln5zS3qcRBHHt6lal796f0XG8b6jaNeIu6pzeZund/Ss/1tqFug1d4hVd4hVd4hVd4hVd4hVd4hVd4hVd4hVd4hVd4hVd4hVd4NWX/mP9eeOX35aK7K7zyu90VXv3uVQsuJ7MrQsh/8wXx5cFd
+  </data>
+ </layer>
+ <layer name="Walls" width="75" height="32">
+  <data encoding="base64" compression="zlib">
+   eJzt1bEJgwAURVExO2URC1fIGI4ewSIiEW5Am3AOvPrDbf4w8M1z3DY9PuOcVt1Lq0yrTqtOq06rTqtOq06rTqtOq06rTqtOq06rTqtOq06rTqtOq06rTqtOq99o1WnVadVp1e1bzeM1W3/Gsr9x/CH/MK20umNv7+hyKQ==
+  </data>
+ </layer>
+ <layer name="Foreground" width="75" height="32">
+  <data encoding="base64" compression="zlib">
+   eJztzmsKgCAQRlFnGUFFW+oFbb8/PXaRUAMiWaERBPfAIDLONxoDAAAAAAAAAAAAAMA/jB/mLC/tipWLMYXEz2eSnqE5IZpfJe5I1dn9feQfSjtXy7OMydZ81HTSry/mNX/w3mima737tKexma3sp1bo3p6U2w/l/vUEvrABALMjSw==
+  </data>
+ </layer>
+ <objectgroup name="EnemySpawn" width="75" height="32">
+  <object name="EnemySpawn" x="1056" y="640" width="32" height="32">
+   <properties>
+    <property name="Monster" value="2"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="MapTransitions" width="75" height="32">
+  <object name="exit" type="exit" x="2272" y="768" width="32" height="160">
+   <properties>
+    <property name="destination" value="testMap.tmx"/>
+    <property name="destinationHeight" value="30"/>
+    <property name="startx" value="2"/>
+    <property name="starty" value="9"/>
+   </properties>
+  </object>
+  <object name="exit" type="exit" x="608" y="992" width="96" height="32">
+   <properties>
+    <property name="destination" value="CryptShaft.tmx"/>
+    <property name="destinationHeight" value="100"/>
+    <property name="startx" value="18"/>
+    <property name="starty" value="3"/>
+   </properties>
+  </object>
+  <object name="exit" type="exit" x="0" y="608" width="32" height="320">
+   <properties>
+    <property name="destination" value="Bridge1.tmx"/>
+    <property name="destinationHeight" value="25"/>
+    <property name="startx" value="44"/>
+    <property name="starty" value="12"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

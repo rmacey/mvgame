@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="69" height="150" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" source="norfairEdited.tsx"/>
+ <tileset firstgid="1281" name="dungeonTiles" tilewidth="32" tileheight="32">
+  <image source="dungeonTiles.png" width="2048" height="1536"/>
+  <tile id="64">
+   <properties>
+    <property name="damage" value="10"/>
+    <property name="hazard" value="yes"/>
+   </properties>
+  </tile>
+  <tile id="65">
+   <properties>
+    <property name="damage" value="100"/>
+    <property name="hazard" value="yes"/>
+   </properties>
+  </tile>
+  <tile id="67">
+   <properties>
+    <property name="jump" value="yes"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="Background" width="69" height="150">
+  <data encoding="base64" compression="zlib">
+   eJzt10EKg0AMQFGRXstT9sKuupqIwbYkkLd4MMvwMY4er207kt77DNkemszroIkmmmjyzy7ReTJN1h525r5R9QzdaKIJPOV77bpL9QzdaBI3sTtrk+oZutEE+AX3Ta5R9QzdaOJ/J9uoeoZuNAG+4b6Jm1TP0I0maw+7E3eJzpNpsvawP9ddPufqeTrQ5L6J/fGO1eRZE7vjOdEk18N3W9wlOgMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPOcAc1UjA==
+  </data>
+ </layer>
+ <layer name="Meta" width="69" height="150">
+  <data encoding="base64" compression="zlib">
+   eJzt2EsKgDAMBcBuejDB+5/JhWtF8fcaZyAXaCB5TWtcNfVaBQAAAHxj7muRTZ8AAAAAqMKtC2CbGQmcYWY858631ScAqMFOf4d3BgCAmmR9ADjOzoRssi0AAADs83cGAAAA/s59BEhmRgEAQBYZHQCy2dUAwIhkGACAsclzADkWwd4Yxg==
+  </data>
+ </layer>
+ <layer name="Background 2" width="69" height="150">
+  <data encoding="base64" compression="zlib">
+   eJzt2Uty00AQBmAlt4CEw/DIYRLgMAQ4QAI5RF4H4HUYCOzplMvF1JhZSCNHk/H3Vf0bbeRqedrd8jAALTnbG4bzyKfI58jF3tKfaHlfogZfI98i3yM/1GT4GTX4FbmL/I78UZPhyf4wPI0cRA4jz/Yf7t7P414vIi8jryJHI++dn/keesBx1OAk8jryJvJ2ZE3yM99DD3gXNTiNvI98iHwcWZP8zPfQAy6jBleR68hN5HZkTfIzv1QPaEnaP8wUK2n/MFOspP3DTLGy7h//Oze72k/WnJt/8nlv18/NvXze2/Xf4Xv5vDd1R+hJPu9N3RF6VLsj9CTvsVN3hKlq9/ptqNmp51C712/D+rws9bxaPLPrHrvU86rd67epxee1tJafF9PN9f6npd/AWnPtsS39Btaa6/1P2lMf+7vHuf5TSntqzXfvsdezpOa719M7qbnm157e5abza019lvx/eG7p/NriPraEdH41328y36+09j6nBfrHJv1jk/5BSTqbla7vWs9NZ7PS9VLP7XXXS2ez0vVSz+1p10uls1npeqnn9rTrlYztHz3teiVmtk1mNgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIPUXXXTXCg==
+  </data>
+ </layer>
+ <layer name="Walls" width="69" height="150">
+  <data encoding="base64" compression="zlib">
+   eJzt20FKA0EQBdA4gmblJVypoILncKFeQY/jWbyi3SBo8meCIZp0pt+DIoML0W9XVyXg2WKxOC91tuXrcgbPtcbclrrb4vViZgXAfr2fbK4ePQ6bq0cySTJJMkn3pS6H7WvO6vug01J1xAwjzz2qmdyUuip1PfLco5rJS6mnUs8jzz3aV++clG86HMkO2HPvvJZ6G/m63knmTqr7Sa+9M0XvpHpO9M4qvZP0TjJ3kt5JeifpndTz+50p9T7RO6vsbMncSXon6Z106N6Z+qzrkOxsSe8kO1vSO2nX3mnxjtzVoedOi/ROMnfSb3pnjnfGJvvsnb/M9j//Tj5nS3a2ZO4kvZOm/tepZ/eH/gEa1HsmYzNd76RdM5njjuucpN7vkzEySTJJMkkySTJJZnFyTpJzkv46kzns+s5Jcp8k5yTJJMkkuU9W1bkpkyST5D5J+8jk2HZb5yTJJMkkySTJJMkkySTZY5NzkpyTJJMkkyST1EomLb13biWTlpjFSSZJ7ySZJL2TZJJkktwnSSYAzFFLn48ArHNHAQBAW+zoANA2sxoAOEZ2GACA42afA/7Dw/Bd65Zf9TH0Vcsfv/tUJp8M9IGT
+  </data>
+ </layer>
+ <layer name="Foreground" width="69" height="150">
+  <data encoding="base64" compression="zlib">
+   eJzt2UFOg0AUgGEgHkEP4N4D9Qwewb0LjWdsuvAgtkFSmzdQrFSg7/uSWZR0Qf4Ow1Cqqt9nHY/tCscyKTV5urFRsq3bMbZJdppEmkRZmzzX/SNrkyGbpqoem7nPYlmyN3kpfM7epESTqGtSWn+z+Hn9HHpszJETmkSZm/Tdb6Zucle3Y+1ufZ5s92P3i++7dsqyNhmiSaTJUXc9aRJpEmkSaRJpEmkSaQLjDD37ACzd2368z30SXMx+Lcr8f+wQTS57N5ppjTRHouxNSs851tiyrkmmNeOcqefJlG3/+3fyfqefJlH2Jn33Hk65H0Pr/ntwXYfGD3OfBAAAMDl7fQAY72PuEwAG2dsCAADAMM/OAAAAQHb+HwGWzBoFAADLYo8OAMvmXg0ArJE9DADAutnPAdfw2hwH/MUX3oM4Gg==
+  </data>
+ </layer>
+ <objectgroup name="Objects" width="69" height="150"/>
+ <objectgroup name="MapTransitions" width="69" height="150">
+  <object name="exit" type="exit" x="2016" y="4768" width="128" height="32">
+   <properties>
+    <property name="destination" value="bubble.tmx"/>
+    <property name="destinationHeight" value="50"/>
+    <property name="startx" value="66"/>
+    <property name="starty" value="6"/>
+   </properties>
+  </object>
+  <object name="exit" type="exit" x="0" y="64" width="32" height="160">
+   <properties>
+    <property name="destination" value="testMap.tmx"/>
+    <property name="destinationHeight" value="73"/>
+    <property name="startx" value="97"/>
+    <property name="starty" value="5"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

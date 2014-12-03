@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="35" height="100" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="Cathedral2" tilewidth="32" tileheight="32">
+  <image source="Cathedral2.png" width="1800" height="524"/>
+ </tileset>
+ <tileset firstgid="897" name="dungeonTiles" tilewidth="32" tileheight="32">
+  <image source="dungeonTiles.png" width="2048" height="1536"/>
+  <tile id="668">
+   <properties>
+    <property name="darkPower" value="yes"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="Background" width="35" height="100">
+  <data encoding="base64" compression="zlib">
+   eJzt1tGNgzAQRVHkbSNFsl0lDdhUg9kGYpcQEDPKC9J+4RXW6n4cWeDAPNujJLevYbid9AjD8L26h/PvOutuWX46yDJajqWDLFuGHPZMV2cZO8viPXN1lmz90kOW0fq2lzN6dLQv2fJcneW5Zkjmr2uVsNfbTKu6iuF9v9pYLM8kos37dYssSWiuIqopB/5cbJAlydp9rVrLs8XDnOcu8vzZLF5f9yEezuMpqjh+psW+lMO7vM5v55ckcw3telvX6mcwhc++1fNJMl9kvkXv6n5HGbV3tt+jOezfv9pDuk+1QZatRrZ6bjGzXefw/u8wy7jI/dwgCwAAAAAAAAAAAAAAAAAAAID/5wUz4SW8
+  </data>
+ </layer>
+ <layer name="Background2" width="35" height="100">
+  <data encoding="base64" compression="zlib">
+   eJzt2DkKQjEARdF83IPDAvy6GHHYlEOrrsdhUw6dD7FVRJA058AlRYq8OqUAAL/opl7qp0HlLdM0S/O0qLxlmVZpnTaVtxzSMZ3Sue6UcknXdEv3yluGTSltGqVxU29H2yllm/d3af86AQAAAOCfJp3nd+Hbu0/3AAAAAAAAfOcBYXUQ2w==
+  </data>
+ </layer>
+ <layer name="Walls" width="35" height="100">
+  <data encoding="base64" compression="zlib">
+   eJztl1tuwjAQRR2yDFbAayNFtAugraJ+9LcrKWIFVZfSpdUWRDWpM4ztcDHkjnRFCHkc4pOJM62NmSbmozLma2JOqpkc1qce815Z3shClgiWktxFsbhz+OdBj1F7/r70XZdzSeVY2+WHYzZe3PfP6pRlX/39tgnEVSpL93/nVqpPbp93spCFLNksQ9/TqX257XWha7OrTPNkt3F57Hx21/nJ7bshFm2vH/oZILHEHjM1ZCELWchClvGytOljQXMgWbaK2LnKd5fFrvvR7BuTc6yz+j9HW6vaNMjxmQssSzDLQmBZgFmWAssczLISWGZgFrobDt2N9wXtruQL2l3JF7S7vKfjx2jM93QpzyPJW7+2drtLs0je+vUMYJG89esFwCJ569crgEXy1i+EL1p3Eb5o3UX4onUX4YvWXYQvWncRvmjdRfiidRcxRlp3ESxadxG+aN1F+KJ1F9FftO4iWG6x73LOcD0W9t08dxEsdJfu0l2cu3xXC1dJc4aS3OW7Wrg4370ei9bdsbHwvTGckuYvfE7njdFQvvwCgqPlsQ==
+  </data>
+ </layer>
+ <objectgroup name="MapTransitions" width="35" height="100">
+  <object name="exit" type="exit" x="544" y="0" width="96" height="32">
+   <properties>
+    <property name="destination" value="HallOfCandles.tmx"/>
+    <property name="destinationHeight" value="32"/>
+    <property name="startx" value="20"/>
+    <property name="starty" value="28"/>
+   </properties>
+  </object>
+  <object x="-32" y="160"/>
+  <object x="-32" y="256"/>
+  <object name="Exit" type="Exit" x="256" y="3168" width="288" height="32">
+   <properties>
+    <property name="destination" value="Fall.tmx"/>
+    <property name="destinationHeight" value="230"/>
+    <property name="startx" value="30"/>
+    <property name="starty" value="3"/>
+   </properties>
+  </object>
+  <object x="-32" y="2368"/>
+ </objectgroup>
+</map>

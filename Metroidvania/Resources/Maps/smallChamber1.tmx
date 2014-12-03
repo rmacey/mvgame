@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="40" height="30" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" source="trees.tsx"/>
+ <layer name="Background" width="40" height="30">
+  <data encoding="base64" compression="zlib">
+   eJzNmMdOAzEQhi3F4gFCOdGeYSkHRHuGpVwIkGcM5UR7hqWcKMkrmHKi/SNmL9aMtY7MyodPK2Uz4/HYX0bKoGPMCTgFZ+AcrFljLvC8BFfgGtwABwzeDZQYHymHFGsndCq8vwV34B488FqPeD6BZ/AChqCLzxetHuMj5ZBiQ/VRT17BG3gHH7zWJ55f4Bv8cN8KsG31GB8phxQbqo96MgmmwDSY4dyzYA7MgwXuWwn69i+GzsiP8ZFySOuF6qOeLIFlsAJWOfc62ACbYIv7VvEdohg6Iz/GR8ohrReqj3qyA3bBHtjn3D1wCI7AMffN8R0quX9+jI+UQ1ovVJ/mouQenY2J8KNtfwu+Q039SOHvyDb3t+Q7pDn1H/6OIvylvfeVO56Dv47vkObUOP7WPTywMjH+0t6Hyh0f19+6h1p9Mf7S3lP7W5+ZVl+Mv6VN7299Zlp9MfOXcrftb8z8dZn7S7lT+5ty/lLu1P6mnL+UO+f5S99te/7G+Osy97dr8/a3yNzfMnN/q07e/rrM/a3nR9PzbdvfKtCDHPx1gR7k4G/9/0vT3+cU/v4Cb5fu8g==
+  </data>
+ </layer>
+ <layer name="Meta" width="40" height="30">
+  <data encoding="base64" compression="zlib">
+   eJztzkEJAAAIBLB72D+ciUwhImwJlgAAAF91XQ8AYN8A36cA1w==
+  </data>
+ </layer>
+ <layer name="Background 2" width="40" height="30">
+  <data encoding="base64" compression="zlib">
+   eJy913dqAmEQhvEF1/RbpJdjpOsxYvcY9ngMe3IMux4jPTlEnoWQhICzg8OXgR8IK/jOHzszet7iuvE9L4EkUkgjg6z/850Cn4sooYwKqqihgSZaaKODLnq4w72/+Lc1Jf12UPWQDH0MMMQIY0wwxQxzYz5N/1KGBzziCc94wSve8I4PYz5N/1IGP+p5UaxgFWtYxwY2sRW15dP0L2XYwS72sI8DHOIIxzgx5tP0L2U4xRnOcYFLXOEaMcSN+TT9SxlukEASKaSRQRY55I35NP1LGQooooQyKqiihlvUjfk0/UsZGmiihTY66KKHO9wb82n6lzL0McAQI4wxwRQzzI35NP1LGTT7Z9uQUdO/lEGzfyz5/mP/WvJZ92/j63tDz00+6/51fR9Y92/wLBFxdx9Y92/wrBhxdx9Y92/wrBlxdx9Y96/r+8C6f13fB9b96/o+sO7fYLa7vA80+/f3DP87g2KI++7uA83+lWZ4DvmQ/Wgpaf599yDMcM1+tJRm/kk9uP5/rpl/mh7C3v9lSzP/ND2Evf/Llmb+aXoIe/+XLc380/QQ9v5L9Ql4rX9V
+  </data>
+ </layer>
+ <layer name="Walls" width="40" height="30">
+  <data encoding="base64" compression="zlib">
+   eJzt17sNwkAQBNDT4XNqWoDgSKmBCqiB2HxqoAJqcAWugVIM9MFYmAhzHumCcbArjSxHvMC7GqrSOb9wslkivvyfClkLfVvCtxP6Urav7yD0XSaMve8q9N0IXyP0tYTvPvP96IS+PeHzhc43tR+rgPsXdL7+91OxsVHOA99gxP5uhsSRXY7FeFJT42YdkVPieUa68DE8kVf4fVf3F6YfWH/J8yn7C+NT9hfGp+wvjE/ZXxif8v8b47P7l+ez+5fns/uX55vz/XsDkZQlRg==
+  </data>
+ </layer>
+ <layer name="Foreground" width="40" height="30">
+  <data encoding="base64" compression="zlib">
+   eJztVksOwVAUffqYoYsw9dmDMGtZhGkTizAttiCxAIswxiKMsQX3paQlqu+81L0JTnLymvYmPb255/YolWBSVezwgdqZgL4eULsW0DcGarcC+qZA7VFA3xKolegf4g+J/n2TP3TtYzJygfijJaDPpn/9WkJOnDylzsSLx/teg8hTq4CY97yulWoQm0RfMwqzRJs0dYhdYq9EfVHl8bRB+OJeQJpC4og4BvTtiPvb9SuvxJX0vNcintpnrmPgGw0GtPuG1fR0rcki1gnnTzQw54K4BPpXVr6y9YeZvw2gD/l/FGl4h7s/zPwdAH1c+SDrDx+YQ858b/az2S3IfubK9677mSu/uO5niflD9jNnPpXMB0X41XxQFlznjxP/+XMHOn9X68k4rA==
+  </data>
+ </layer>
+ <objectgroup name="Objects" width="40" height="30"/>
+ <objectgroup name="MapTransitions" width="40" height="30">
+  <object name="exit" type="exit" x="0" y="320" width="32" height="128">
+   <properties>
+    <property name="destination" value="bubble.tmx"/>
+    <property name="destinationHeight" value="50"/>
+    <property name="startx" value="77"/>
+    <property name="starty" value="39"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="60" height="25" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="MagicSword1" tilewidth="32" tileheight="32">
+  <image source="MagicSword1.png" width="1900" height="700"/>
+ </tileset>
+ <layer name="Background" width="60" height="25">
+  <data encoding="base64" compression="zlib">
+   eJzt1FtOAjEUxvECG0BAWAoqwsO8chFcCqjgBpSLLIq7i1Lg/0j6cErsyZDgSeaXNDk9nfnaZhLnXGL+LI8bFFBECbcoo3JGPab3nPdr522hjQ6e0EUPz8I3aEo77yfGmGCKGb4wF/ZBUzOw59d0n90Fztfu83XfZ+ldWvc29h+e1vmeZpf2JXRGMb1p5fWzS/vyEajH9GrnXWKFNTbYYodvbyzNWwTqMb3aeX+xxwEuw4Msct5YmvcTWCemVzvvHWve4wE1PKKOhjeW5lUD9Zhe7bwD1nzBK94wxAjv3lia1w/UY3q18xpjjDHGmP/lCOHMnT4=
+  </data>
+ </layer>
+ <layer name="Background2" width="60" height="25">
+  <data encoding="base64" compression="zlib">
+   eJztk7kJwDAQBK3MLfjpxi34KctPWQZV4ia8AkUCCQeLT8EOTDTBwZ3UNFweV7dsRtjBPnGIzbqz2eAMl8Q1NuvOxsM7mXXAE14VdDYt/siemecr6Gys76f76r5MrO/3933DDkv7te5swg5L+7XubErvKTTrzmZy+fcUmnUXQgghhBBCfOcFAtj0JQ==
+  </data>
+ </layer>
+ <layer name="Meta" width="60" height="25">
+  <data encoding="base64" compression="zlib">
+   eJztzjERAAAIBKC3jv0DWsLTBRKQAAAAAADs6/oewK0BlmsALA==
+  </data>
+ </layer>
+ <layer name="Walls" width="60" height="25">
+  <data encoding="base64" compression="zlib">
+   eJztzzsOgCAABFHg3F4JP2DjvTyAmxhDL1TLvGTKLTaEsXJ8W9WmdnWooqo6O/q7Bz5Xas3gTq0Z8Ncbf73x1xt/vS3RKwAAAKDHA9dCT40=
+  </data>
+ </layer>
+ <layer name="Foreground" width="60" height="25">
+  <data encoding="base64" compression="zlib">
+   eJztzEsKwDAIBUB7/8P0c6ymuUNcuwtIVzPwwIdoRK/ziLgyd+Ypc9119N2bbm/+HJkvM8tcdx199wYAAAAAgH8s9r9AsQ==
+  </data>
+ </layer>
+ <objectgroup name="MapTransitions" width="60" height="25">
+  <object name="exit" type="exit" x="1888" y="192" width="32" height="224">
+   <properties>
+    <property name="destination" value="Bridge1.tmx"/>
+    <property name="destinationHeight" value="25"/>
+    <property name="startx" value="3"/>
+    <property name="starty" value="12"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="EnemySpawn" width="60" height="25">
+  <object name="EnemySpawn" x="864" y="160" width="32" height="32">
+   <properties>
+    <property name="Enemy" value="1"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

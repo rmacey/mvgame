@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="80" height="80" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="Cathedral2" tilewidth="32" tileheight="32">
+  <image source="Cathedral2.png" width="1800" height="524"/>
+ </tileset>
+ <tileset firstgid="897" name="dungeonTiles" tilewidth="32" tileheight="32">
+  <image source="dungeonTiles.png" width="2048" height="1536"/>
+  <tile id="64">
+   <properties>
+    <property name="damage" value="30"/>
+    <property name="hazard" value="yes"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="Background" width="80" height="80">
+  <data encoding="base64" compression="zlib">
+   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
+  </data>
+ </layer>
+ <layer name="Background2" width="80" height="80">
+  <data encoding="base64" compression="zlib">
+   eJzt2bkNAjEARNFd0QMsTXA0wtEUR1PAdkFAHRwZkyIR4zV6T/qBJQcTWnLTAAAAAAAAAAAAAAD8p2v7eb613+8BvzFOk9SlaeEtNVqlddqkbeEtNdqlfTqkY+EtNTqlc7qkvuyUKt3TIz3Tq/CWGs3yhpunRVp6zw1ONyq9AAAAAAAAAIAh6P3pAwAANG+Ocw3s
+  </data>
+ </layer>
+ <layer name="Walls" width="80" height="80">
+  <data encoding="base64" compression="zlib">
+   eJzt2lEuA0Ecx/Hd7gkICfHa1l2oExDhDg7QZ4k78bK38OIk/lPzIJsOu37T2Rnz/SS/oJLN+qLtlqYBAAAAAAAAAAAAAAAAAACoy1Nb/uhXbr++Tbta+r3brrqvXds2thu/4W3u49Bx9h0j9vchx36Pi2Y775n9LJd+t/bzcOd3/+39l5nP6ze59CsV/TT009BPQz8N/TS59Duy5yqnfsf+7UngOe5ZF16I+9x5hA3l0u/Q11Cu+0Wnrd9zfPrF6zd2U68Rx5wb/eg3ttll17yubSvb0m9425R2qfqpDaf0U1nPB/r93Zp+kpXvV+v9n2pJv2Q+Fvz+KlL2U/ZWSL+SKP3sPs49TrjHWkmt/WJ9zfTTzoF+2jnQL+7rByWhn4Z+Gvpp6Kehn6aEfs/t7u+P2wxXRL8+cI45L6d+/xX9NPTT0E9DPw39NPTT0E9zqH7+fyHnvrZIeu0Ss1+NU/t9AqRBrrU=
+  </data>
+ </layer>
+ <layer name="Foreground" width="80" height="80">
+  <data encoding="base64" compression="zlib">
+   eJztmkFygzAMRZNyhy56mq4DpO0Ncp9eokfhKJ2epJrpoi4jHDsysey+N6MFAQR85I8wORwAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/hen4TdGiUliHq5vu95+vS4nrzceH2qfwTai50ftc2iZEf1MTOhnYkY/E/ifDfzPBv5nw7v/nYefeJF4lXiL9KxyLZetdSV8Ssvfk/9NEf1K+JSWvyf/GyP6lfApLX9P9XeK6FfCp7T8PdVfDf/bqutwnqGVOYca/qfVdew+esaL/7Wqnxf/a1U/L/1fCf1S5nNLe6qX/q/V+qvhf1re2vrFvj3E6vj9eFi2csq6y3o8pCxfy+/t+VH73uViGb+h9qXeY2Ie5hHL+A21L/UeE/Mwj2h9UWoNhNrn+PPXKkJiPZxHLP4X7pvTnz4d/8Ytx/aCNu5S62+l3yL7LZJvkd+XOSHC7YM8Scf2gjbuUj1oj7mv1vTTxl2qB6FfOf8rRWv6Wfxvj7nX1vSz+N8e3z5b08+b/2m1f27sG0PN8bsxx/FZ+jh74q1/keM858aYue2kLM+GSLlWnh82eH7YoP+zwfi1ca/+pVfu1b/0yh7Pj9bmTy14/+8lQCrf4LC0jg==
+  </data>
+ </layer>
+ <layer name="Meta" width="80" height="80">
+  <data encoding="base64" compression="zlib">
+   eJzt2cEJADAIBEEh/ReVzlKBjwQhiDOwTws4jAAAAAAAAAAAAAAAAAAAJtsr7+XmJgAAAAAAAICq/2N1AABAb783he0yzwFxdlyl
+  </data>
+ </layer>
+ <objectgroup name="MapTransitions" width="80" height="80">
+  <object name="exit" type="exit" x="0" y="1248" width="32" height="192">
+   <properties>
+    <property name="destination" value="testMap.tmx"/>
+    <property name="destinationHeight" value="30"/>
+    <property name="startx" value="83"/>
+    <property name="starty" value="13"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="EnemySpawn" width="80" height="80">
+  <object name="EnemySpawn" x="1056" y="1248" width="32" height="32">
+   <properties>
+    <property name="Monster" value="2"/>
+   </properties>
+  </object>
+  <object name="EnemySpawn" x="736" y="1504" width="32" height="32">
+   <properties>
+    <property name="Monster" value="2"/>
+   </properties>
+  </object>
+  <object name="EnemySpawn" x="608" y="1728" width="32" height="32">
+   <properties>
+    <property name="Monster" value="2"/>
+   </properties>
+  </object>
+  <object name="EnemySpawn" x="144" y="2064" width="32" height="32">
+   <properties>
+    <property name="Monster" value="2"/>
+   </properties>
+  </object>
+  <object name="EnemySpawn" x="1232" y="1872" width="32" height="32">
+   <properties>
+    <property name="Monster" value="2"/>
+   </properties>
+  </object>
+  <object name="EnemySpawn" x="320" y="2432" width="32" height="32">
+   <properties>
+    <property name="Monster" value="2"/>
+   </properties>
+  </object>
+  <object name="EnemySpawn" x="1824" y="2400" width="32" height="32">
+   <properties>
+    <property name="Monster" value="2"/>
+   </properties>
+  </object>
+  <object name="EnemySpawn" x="1728" y="1984" width="32" height="32">
+   <properties>
+    <property name="Monster" value="2"/>
+   </properties>
+  </object>
+  <object name="EnemySpawn" x="2032" y="1648" width="32" height="32">
+   <properties>
+    <property name="Monster" value="2"/>
+   </properties>
+  </object>
+  <object name="EnemySpawn" x="2464" y="1824">
+   <properties>
+    <property name="Monster" value="1"/>
+   </properties>
+  </object>
+  <object name="EnemySpawn" x="1568" y="2272">
+   <properties>
+    <property name="Monster" value="2"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="Platforms" width="80" height="80">
+  <object name="platformRock-1" type="horizontal" x="704" y="2016">
+   <properties>
+    <property name="distanceToMove" value="500"/>
+    <property name="speed" value="30"/>
+   </properties>
+  </object>
+  <object name="platformRock-1" type="horizontal" x="1664" y="2464">
+   <properties>
+    <property name="distanceToMove" value="1500"/>
+    <property name="speed" value="50"/>
+   </properties>
+  </object>
+  <object name="platformRock-1" type="vertical" x="1824" y="1952">
+   <properties>
+    <property name="distanceToMove" value="550"/>
+    <property name="speed" value="40"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

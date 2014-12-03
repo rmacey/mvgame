@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="85" height="30" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="norfairEdited" tilewidth="32" tileheight="32">
+  <image source="norfairEdited.png" width="1280" height="1024"/>
+ </tileset>
+ <tileset firstgid="1281" name="DungeonTiles" tilewidth="32" tileheight="32">
+  <image source="dungeonTiles.png" width="2048" height="1536"/>
+  <tile id="65">
+   <properties>
+    <property name="damage" value="80"/>
+    <property name="hazard" value="yes"/>
+   </properties>
+  </tile>
+  <tile id="67">
+   <properties>
+    <property name="jump" value="yes"/>
+   </properties>
+  </tile>
+  <tile id="711">
+   <properties>
+    <property name="fall" value="yes"/>
+   </properties>
+  </tile>
+  <tile id="1320">
+   <properties>
+    <property name="item" value="1"/>
+   </properties>
+  </tile>
+  <tile id="2699">
+   <properties>
+    <property name="item" value="true"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="Background" width="85" height="30">
+  <data encoding="base64" compression="zlib">
+   eJzt0DENwDAAA8EMpVA4wRP+DEogHTpFr97wqyXfvMaYP+z+2NvO2nT6Wz2mTAsxZVqIKdNCTJkWYsq0EFOmhZgyLcSUaSGmTAsxZVqIKdNCTJkWYsq0EFOmhXamDxZPnlE=
+  </data>
+ </layer>
+ <layer name="Meta" width="85" height="30">
+  <data encoding="base64" compression="zlib">
+   eJztw0EJAAAIBLD7WMz+ocQK4nODJQAAAAAAAAAAAHDX5dc1nnYXBg==
+  </data>
+ </layer>
+ <layer name="Walls" width="85" height="30">
+  <data encoding="base64" compression="zlib">
+   eJzt2EsKgzAYReEojt1MN+ASOg1dS5fjOtqNaWtJfwghkzRXSMM5cNGhfAg+/Ojc5Rhp8mMYprow1YepPkz1eSzlYaoPU32Y6sNUnz3zb9jKMtPHEEaaYlNcNaWmuNaXM8W1rtx3Ka51/fu3/rXB68dUWw//pFoy7eU/Xyum5pmabsdzaR/C0c5f3+2Zd4MzVtp9KtsZ1xF79nCfrlPZ1KWePZi2Fqb6MNWHqT5M9WGqD1N9Zjo7t7Cf94z3MX0D2btsKQ==
+  </data>
+ </layer>
+ <layer name="Foreground" width="85" height="30">
+  <data encoding="base64" compression="zlib">
+   eJzt0LEJgFAMBNADXdi1XMJeXcQt1FYtxXzkPUiTS3EkAQAAAKBVY3UBAODR1FU34EtDdYEf8tP3rX2y5T7zsV8u2XkLAEDbdkoyDNQ=
+  </data>
+ </layer>
+ <objectgroup name="Objects" width="85" height="30"/>
+ <objectgroup name="MapTransitions" width="85" height="30">
+  <object name="exit" type="exit" x="0" y="160" width="32" height="160">
+   <properties>
+    <property name="destination" value="HallOfCandles.tmx"/>
+    <property name="destinationHeight" value="32"/>
+    <property name="startx" value="69"/>
+    <property name="starty" value="28"/>
+   </properties>
+  </object>
+  <object name="exit" type="exit" x="2688" y="352" width="32" height="192">
+   <properties>
+    <property name="destination" value="SpikeMaze.tmx"/>
+    <property name="destinationHeight" value="80"/>
+    <property name="startx" value="2"/>
+    <property name="starty" value="42"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="EnemySpawn" width="85" height="30"/>
+ <objectgroup name="Platforms" width="85" height="30">
+  <object name="platformRock-1" type="horizontal" x="2304" y="736">
+   <properties>
+    <property name="distanceToMove" value="1700"/>
+    <property name="speed" value="90"/>
+   </properties>
+  </object>
+  <object name="platformRock-1" type="vertical" x="1216" y="608">
+   <properties>
+    <property name="distanceToMove" value="450"/>
+    <property name="speed" value="60"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
