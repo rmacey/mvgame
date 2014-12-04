@@ -91,6 +91,7 @@
 		94A2FA6219F891010098EF2D /* Ghost.m in Sources */ = {isa = PBXBuildFile; fileRef = 94A2FA6119F891010098EF2D /* Ghost.m */; };
 		94B00EEC1A05FA230062777E /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B00EEB1A05FA230062777E /* Utility.m */; };
 		94B00EEE1A08CE700062777E /* sizzle-1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 94B00EED1A08CE700062777E /* sizzle-1.wav */; };
+		94B81E281A311364001901ED /* MovableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B81E271A311364001901ED /* MovableObject.m */; };
 		94C0D9691A0EC1FB0065A981 /* land-2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 94C0D9671A0EC1FB0065A981 /* land-2.wav */; };
 		94C0D96B1A0ECCA40065A981 /* land-1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 94C0D96A1A0ECCA40065A981 /* land-1.wav */; };
 		94C2A4C61918C0C4005A85C1 /* ActionSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C2A4C51918C0C4005A85C1 /* ActionSprite.m */; };
@@ -401,6 +402,8 @@
 		94B00EEA1A05FA230062777E /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Utility.h; path = Classes/Utility.h; sourceTree = "<group>"; };
 		94B00EEB1A05FA230062777E /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Utility.m; path = Classes/Utility.m; sourceTree = "<group>"; };
 		94B00EED1A08CE700062777E /* sizzle-1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "sizzle-1.wav"; sourceTree = "<group>"; };
+		94B81E261A311364001901ED /* MovableObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovableObject.h; sourceTree = "<group>"; };
+		94B81E271A311364001901ED /* MovableObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovableObject.m; sourceTree = "<group>"; };
 		94C0D9671A0EC1FB0065A981 /* land-2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "land-2.wav"; sourceTree = "<group>"; };
 		94C0D96A1A0ECCA40065A981 /* land-1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "land-1.wav"; sourceTree = "<group>"; };
 		94C2A4C41918C0C4005A85C1 /* ActionSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSprite.h; sourceTree = "<group>"; };
@@ -1287,6 +1290,8 @@
 				94A2FA5919F78C0F0098EF2D /* Weapon.m */,
 				948247CE19EF845400140216 /* Attack.h */,
 				948247CF19EF845400140216 /* Attack.m */,
+				94B81E261A311364001901ED /* MovableObject.h */,
+				94B81E271A311364001901ED /* MovableObject.m */,
 				94C2A4C41918C0C4005A85C1 /* ActionSprite.h */,
 				94C2A4C51918C0C4005A85C1 /* ActionSprite.m */,
 				942D1CD418FF80FD00FFAE25 /* Player.h */,
@@ -2108,6 +2113,7 @@
 				94F1FEB918FE5F75007D5A05 /* CCDrawNode.m in Sources */,
 				94F1FF8A18FE5F76007D5A05 /* CCFileUtils.m in Sources */,
 				94F1000D18FE5F77007D5A05 /* OALTools.m in Sources */,
+				94B81E281A311364001901ED /* MovableObject.m in Sources */,
 				94F1FEC318FE5F75007D5A05 /* ccGLStateCache.m in Sources */,
 				94F1FFBB18FE5F76007D5A05 /* OALActionManager.m in Sources */,
 				94F1FF1A18FE5F76007D5A05 /* CCScheduler.m in Sources */,
