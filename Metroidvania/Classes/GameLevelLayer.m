@@ -7,7 +7,7 @@
 
 #import "GameLevelLayer.h"
 #import "Player.h"
-#import "TestMonster.h"
+#import "Torizo.h"
 #import "Ghost.h"
 #import "Platform.h"
 
@@ -60,10 +60,10 @@
         player = [[Player alloc] init];
         player.scaleX = player.XScale;
         player.scaleY = player.YScale;
-        entrancePoint = ccp(10*32,14*32);
+        entrancePoint = ccp(18*32,88*32);
         
         activeEnemies = [[NSMutableArray alloc] init];
-        [self loadMapNamed:@"testMap.tmx" withEntrancePoint:entrancePoint];
+        [self loadMapNamed:@"CryptShaft.tmx" withEntrancePoint:entrancePoint];
         
         [hud updateBar:hud.healthBar ToPercentage:player.health/player.maxHealth];
         [hud updateBar:hud.energyBar ToPercentage:1];
@@ -80,6 +80,9 @@
     [[OALSimpleAudio sharedInstance] preloadEffect:@"MutedStep-4.wav"];
     [[OALSimpleAudio sharedInstance] preloadEffect:@"MutedStep-5.wav"];
     [[OALSimpleAudio sharedInstance] preloadEffect:@"MutedStep-6.wav"];
+    [[OALSimpleAudio sharedInstance] preloadEffect:@"MonsterStep-1.wav"];
+    [[OALSimpleAudio sharedInstance] preloadEffect:@"MonsterStep-2.wav"];
+    [[OALSimpleAudio sharedInstance] preloadEffect:@"MonsterStep-3.wav"];
     [[OALSimpleAudio sharedInstance] preloadEffect:@"SwordWhoosh-1.wav"];
     [[OALSimpleAudio sharedInstance] preloadEffect:@"SwordWhoosh-2.wav"];
     [[OALSimpleAudio sharedInstance] preloadEffect:@"SwordWhoosh-3.wav"];
@@ -106,7 +109,7 @@
     
     
     map = [CCTiledMap tiledMapWithFile:mapName];
-    [self addChild:map];
+//    [self addChild:map];
     
     //map.scale = 1.5;
     
@@ -137,6 +140,8 @@
         for(ActionSprite *enemy in activeEnemies)
             [map addChild:enemy.debugHurtBox];
     }
+    
+    [self addChild:map];
 }
 
 -(void)loadEnemies
@@ -149,7 +154,7 @@
         int monsterType = [[spawnPoint valueForKey:@"Monster"] intValue];
         if (monsterType == 1)
         {
-            TestMonster *monster = [[TestMonster alloc] init];
+            Torizo *monster = [[Torizo alloc] init];
             monster.scaleX = monster.XScale;
             monster.scaleY = monster.YScale;
             CGFloat x = [spawnPoint[@"x"] floatValue];
@@ -223,6 +228,7 @@
 
 -(void)update:(CCTime)dt
 {
+   // NSLog(@"GLL update");
     [player update:dt];
     [hud updateBar:hud.manaBar ToPercentage:player.mana/player.maxMana];
     //should maybe call general method in HUD that updates all bars, but this way we don't need to worry about health bar unnecessarily
@@ -285,15 +291,15 @@
     //[self checkAttackCollisions];
     [self setViewpointCenter:player.position];
     
-   // [hud updateLabel:hud.testLabel withValue:[NSString stringWithFormat:@"velocity X = %f, velocity Y = %f", player.velocity.x, player.velocity.y]];
+ //   [hud updateLabel:hud.testLabel withValue:[NSString stringWithFormat:@"velocity X = %f, velocity Y = %f", player.velocity.x, player.velocity.y]];
 }
 
 -(void)fixedUpdate:(CCTime)dt
 {
-  //  NSLog(@"GLL fixedUpdate - velocityY: %f", player.velocity.y);
+  //  NSLog(@"GLL fixedUpdate");
    [player fixedUpdate:dt];
     [self checkForPlayerExits:player];
-    //[self newCollisionCheckForActionSprite:player];
+    //[self newCollisionCheckForActionSprite:player withTime:dt];
     [self checkForAndResolveHorizontalCollisionsForActionSprite:player];
     [self checkForAndResolveVerticalCollisionsForActionSprite:player];
     
@@ -365,7 +371,7 @@
 
 
 
--(void)newCollisionCheckForActionSprite:(ActionSprite *)sprite
+-(void)newCollisionCheckForActionSprite:(ActionSprite *)sprite withTime:(CCTime)dt
 {
     float xPos = sprite.hurtBox.actual.origin.x;
     float yPos = sprite.hurtBox.actual.origin.y + sprite.hurtBox.actual.size.height;
@@ -389,58 +395,112 @@
             }
             
             NSInteger gid = [walls tileGIDAt:tileCoord];
+            
+            
+            
+            
+            
+            
+            
             if (gid) //is there a wall at tile
             {
                 CGRect tileRect = [self tileRectFromTileCoords:tileCoord];
-                if (CGRectIntersectsRect(sprite.boundingBox, tileRect))
+                if (CGRectIntersectsRect(sprite.hurtBox.actual, tileRect))
                 {
-                    CGRect intersection = CGRectIntersection(sprite.boundingBox,  tileRect);
-                    if(intersection.size.width > sprite.boundingBox.size.width/2)
+                    CGRect intersection = CGRectIntersection(sprite.hurtBox.actual, tileRect);
+                    if (intersection.size.width > intersection.size.height)
                     {
-                        if ((CGRectGetMinY(sprite.boundingBox) < CGRectGetMaxY(tileRect))&& (CGRectGetMinY(sprite.boundingBox) > tileRect.origin.y) && sprite.velocity.y<=0)
+                        if (sprite.velocity.y > 0)
                         {
-                            NSLog(@"BELOW %f %f ", intersection.size.width,intersection.size.height );
-                            // sprite is below player
+                            //tile is diagonal & above but but resolving vertically
+                            sprite.desiredPosition = ccp(sprite.desiredPosition.x, sprite.desiredPosition.y - intersection.size.height);
+                            //p.onWall = YES;
+                            sprite.velocity = ccp(sprite.velocity.x, 0.0);
+                            sprite.position = sprite.desiredPosition;
+                        }
+                        else if (sprite.velocity.y < 0)
+                        {
+                            //tile is diagonal & below but but resolving vertically
                             sprite.desiredPosition = ccp(sprite.desiredPosition.x, sprite.desiredPosition.y + intersection.size.height);
-                            [sprite  landingDetectedWithYVelocity:(float) sprite.velocity.y];
-                            player.velocity = ccp(player.velocity.x, 0.0); //////Here
+                            //p.onWall = YES;
+                            
+                            if(sprite.velocity.y < -20)
+                                [sprite  landingDetectedWithYVelocity:(float) sprite.velocity.y];
+                            
+                            sprite.velocity = ccp(sprite.velocity.x, 0.0);
+                            sprite.position = sprite.desiredPosition;
                             sprite.onGround = YES;
                         }
-                        else if((CGRectGetMaxY(sprite.boundingBox) > CGRectGetMinY(tileRect)) && (CGRectGetMaxY(sprite.boundingBox) < tileRect.origin.y))
-                        {
-                            // sprite is above player
-                            NSLog(@"ABOVE %f %f", intersection.size.width,intersection.size.height );
-                            sprite.desiredPosition = ccp(sprite.desiredPosition.x, sprite.desiredPosition.y - intersection.size.height);
-                            sprite.velocity = ccp(sprite.velocity.x, 0.0);
-                        }
                     }
-                    else if(intersection.size.height > tileRect.size.height/2)
+                    else if (sprite.velocity.x > 0 && tileRect.origin.x > sprite.hurtBox.actual.origin.x)
                     {
-                        if ((CGRectGetMaxX(sprite.boundingBox) > CGRectGetMinX(tileRect))&&((CGRectGetMaxX(sprite.boundingBox) < tileRect.origin.x)))
+                        //tile is right of the Character
+                        sprite.desiredPosition = ccp(sprite.desiredPosition.x - intersection.size.width, sprite.desiredPosition.y);
+                        //p.onWall = YES;
+                        sprite.velocity = ccp(0.0, sprite.velocity.y);
+                        sprite.position = sprite.desiredPosition;;
+                    }
+                    else if (sprite.velocity.x < 0 && tileRect.origin.x <= sprite.hurtBox.actual.origin.x)
+                    {
+                        //tile is left of the Character
+                        sprite.desiredPosition = ccp(sprite.desiredPosition.x + intersection.size.width, sprite.desiredPosition.y);;
+                        //p.onWall = YES;
+                        sprite.velocity = ccp(0.0, sprite.velocity.y);
+                        sprite.position = sprite.desiredPosition;
+                    }
+                
+                
+                    sprite.position = sprite.desiredPosition;
+                    
+                    
+                    
+                    if (intersection.size.height > intersection.size.width)
+                    {
+                        if (sprite.velocity.x > 0)
                         {
-                            // sprite is right of player
-                            NSLog(@"RIGHT %f %f", intersection.size.width,intersection.size.height );
+                            //tile is diagonal right but resolving horizontally
                             sprite.desiredPosition = ccp(sprite.desiredPosition.x - intersection.size.width, sprite.desiredPosition.y);
+                            //p.onWall = YES;
+                            sprite.velocity = ccp(0.0, sprite.velocity.y);
+                            sprite.position = sprite.desiredPosition;
                         }
-                        else if ((CGRectGetMinX(sprite.boundingBox) < CGRectGetMaxX(tileRect))&& (CGRectGetMinX(sprite.boundingBox) > tileRect.origin.x))
+                        else if (sprite.velocity.x < 0)
                         {
-                            // sprite is left of player
-                            NSLog(@"LEFT %f %f",intersection.size.width,intersection.size.height);
+                            //tile is diagonal left but resolving horizontally
                             sprite.desiredPosition = ccp(sprite.desiredPosition.x + intersection.size.width, sprite.desiredPosition.y);
+                            //p.onWall = YES;
+                            sprite.velocity = ccp(0.0, sprite.velocity.y);
+                            sprite.position = sprite.desiredPosition;
                         }
                     }
-                    else if (intersection.size.width > intersection.size.height)
+                    else if (sprite.velocity.y > 0 && tileRect.origin.y > sprite.hurtBox.actual.origin.y)
                     {
-                        float resolutionHeight;
-                        if(sprite.velocity.y<=0)
-                        {
-                            NSLog(@"diagonal below %f %f", intersection.size.width,intersection.size.height );
-                            //tile is below player
-                            resolutionHeight = intersection.size.height;
-                        }
-                        [sprite  landingDetectedWithYVelocity:(float) sprite.velocity.y];
-                        sprite.desiredPosition = ccp(sprite.desiredPosition.x, sprite.desiredPosition.y + resolutionHeight);
+                        //tile is directly above the Character
+                        sprite.desiredPosition = ccp(sprite.desiredPosition.x, sprite.desiredPosition.y - intersection.size.height);
+                        sprite.velocity = ccp(sprite.velocity.x, 0.0);
+                        sprite.position = sprite.desiredPosition;
                     }
+                    else if (sprite.velocity.y < 0 && tileRect.origin.y < sprite.hurtBox.actual.origin.y)
+                    {
+                        //tile is directly below the Character
+                        sprite.desiredPosition = ccp(sprite.desiredPosition.x, sprite.desiredPosition.y + intersection.size.height);
+                        
+                        if(sprite.velocity.y < -20)
+                            [sprite  landingDetectedWithYVelocity:(float) sprite.velocity.y];
+                        
+                        sprite.velocity = ccp(sprite.velocity.x, 0.0);
+                        sprite.onGround = YES;
+                        sprite.position = sprite.desiredPosition;
+                    }
+
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                 }
             }
         }
@@ -607,7 +667,7 @@
 
 -(void)checkObjectCollisions:(Player *)p
 {
-    for (TestMonster *monster in activeEnemies)
+    for (Torizo *monster in activeEnemies)
     {
         if (CGRectIntersectsRect(p.hurtBox.actual, monster.hurtBox.actual) && monster.movementState == movementStateRun)
         {
@@ -617,7 +677,7 @@
                 [hud updateBar:hud.healthBar ToPercentage:p.health/p.maxHealth];
  
                 p.velocity = CGPointZero;
-                p.acceleration = 0.0f;
+               // p.acceleration = 0.0f;
                 
                 CGPoint pnormal = ccpSub(p.hurtBox.actual.origin, monster.hurtBox.actual.origin);
                 CGFloat direction = [Utility CGPointToDegree:pnormal];
@@ -697,6 +757,7 @@
             
             actionSprite.velocity = platform.velocity;
             actionSprite.onGround = YES;
+            actionSprite.onPlatform = YES;
             actionSprite.position = actionSprite.desiredPosition;
         }
     }
@@ -754,6 +815,7 @@
         
         actionSprite.velocity = platform.velocity;
         actionSprite.onGround = YES;
+        actionSprite.onPlatform = YES;
         actionSprite.position = actionSprite.desiredPosition;
     }
 }
@@ -835,7 +897,10 @@
             
                 if ([player numberOfRunningActions] == 0)
                 {
-                    [player runAction:player.runAction];
+                    if (player.statusState == statusStateBlock)
+                        [player runAction:player.movingBlockAction];
+                    else
+                        [player runAction:player.runAction];
                 }
                 
             }
@@ -872,7 +937,7 @@
     if (player.movementState != movementStateJump && player.movementState != movementStateFall && player.attackState == attackStateNone)
         [player stopAllActions];
     
-    player.acceleration = 0.0;
+   // player.acceleration = 0.0;
 }
 /////////////////////////////////////////////////////////
 /////////   END DPAD DELEGATE METHODS    ////////////////
@@ -919,9 +984,15 @@
     {
         //right button touch ended
     }
-    else if (CGRectContainsPoint([hud.jumpButton boundingBox], touchLocation))
+    else if (CGRectContainsPoint([hud.leftButton boundingBox], touchLocation))
     {
-        //left button touch ended
+        if(player.statusState == statusStateBlock)
+        {
+            player.statusState = statusStateNone;
+            if(player.movementState == movementStateRun)
+                [player stopAction:player.movingBlockAction];
+            
+        }
     }
     else if (CGRectContainsPoint([hud.jumpButton boundingBox], touchLocation))
     {

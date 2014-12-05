@@ -84,7 +84,7 @@
 		9486603D1933E7AD003FAE62 /* MagicSword1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9486603B1933E7AD003FAE62 /* MagicSword1.png */; };
 		9486603E1933E7AD003FAE62 /* OpulentHall.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 9486603C1933E7AD003FAE62 /* OpulentHall.tmx */; };
 		9488AF1E19F5C23A00630AD1 /* playerDeath-1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9488AF1D19F5C23A00630AD1 /* playerDeath-1.mp3 */; };
-		9488C853193D447100FDA747 /* TestMonster.m in Sources */ = {isa = PBXBuildFile; fileRef = 9488C852193D447100FDA747 /* TestMonster.m */; };
+		9488C853193D447100FDA747 /* Torizo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9488C852193D447100FDA747 /* Torizo.m */; };
 		94A2FA5A19F78C0F0098EF2D /* Weapon.m in Sources */ = {isa = PBXBuildFile; fileRef = 94A2FA5919F78C0F0098EF2D /* Weapon.m */; };
 		94A2FA5D19F78D180098EF2D /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 94A2FA5C19F78D180098EF2D /* Item.m */; };
 		94A2FA5F19F880DD0098EF2D /* SpikeMaze.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 94A2FA5E19F880DD0098EF2D /* SpikeMaze.tmx */; };
@@ -92,6 +92,9 @@
 		94B00EEC1A05FA230062777E /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B00EEB1A05FA230062777E /* Utility.m */; };
 		94B00EEE1A08CE700062777E /* sizzle-1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 94B00EED1A08CE700062777E /* sizzle-1.wav */; };
 		94B81E281A311364001901ED /* MovableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B81E271A311364001901ED /* MovableObject.m */; };
+		94B81E2C1A313BF9001901ED /* MonsterStep-1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 94B81E291A313BF9001901ED /* MonsterStep-1.wav */; };
+		94B81E2D1A313BF9001901ED /* MonsterStep-2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 94B81E2A1A313BF9001901ED /* MonsterStep-2.wav */; };
+		94B81E2E1A313BF9001901ED /* MonsterStep-3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 94B81E2B1A313BF9001901ED /* MonsterStep-3.wav */; };
 		94C0D9691A0EC1FB0065A981 /* land-2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 94C0D9671A0EC1FB0065A981 /* land-2.wav */; };
 		94C0D96B1A0ECCA40065A981 /* land-1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 94C0D96A1A0ECCA40065A981 /* land-1.wav */; };
 		94C2A4C61918C0C4005A85C1 /* ActionSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C2A4C51918C0C4005A85C1 /* ActionSprite.m */; };
@@ -390,8 +393,8 @@
 		9486603B1933E7AD003FAE62 /* MagicSword1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MagicSword1.png; sourceTree = "<group>"; };
 		9486603C1933E7AD003FAE62 /* OpulentHall.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = OpulentHall.tmx; sourceTree = "<group>"; };
 		9488AF1D19F5C23A00630AD1 /* playerDeath-1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "playerDeath-1.mp3"; sourceTree = "<group>"; };
-		9488C851193D447100FDA747 /* TestMonster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestMonster.h; path = Classes/TestMonster.h; sourceTree = "<group>"; };
-		9488C852193D447100FDA747 /* TestMonster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestMonster.m; path = Classes/TestMonster.m; sourceTree = "<group>"; };
+		9488C851193D447100FDA747 /* Torizo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Torizo.h; path = Classes/Torizo.h; sourceTree = "<group>"; };
+		9488C852193D447100FDA747 /* Torizo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Torizo.m; path = Classes/Torizo.m; sourceTree = "<group>"; };
 		94A2FA5819F78C0F0098EF2D /* Weapon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Weapon.h; path = Classes/Weapon.h; sourceTree = "<group>"; };
 		94A2FA5919F78C0F0098EF2D /* Weapon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Weapon.m; path = Classes/Weapon.m; sourceTree = "<group>"; };
 		94A2FA5B19F78D180098EF2D /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Item.h; path = Classes/Item.h; sourceTree = "<group>"; };
@@ -404,6 +407,9 @@
 		94B00EED1A08CE700062777E /* sizzle-1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "sizzle-1.wav"; sourceTree = "<group>"; };
 		94B81E261A311364001901ED /* MovableObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovableObject.h; sourceTree = "<group>"; };
 		94B81E271A311364001901ED /* MovableObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovableObject.m; sourceTree = "<group>"; };
+		94B81E291A313BF9001901ED /* MonsterStep-1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "MonsterStep-1.wav"; sourceTree = "<group>"; };
+		94B81E2A1A313BF9001901ED /* MonsterStep-2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "MonsterStep-2.wav"; sourceTree = "<group>"; };
+		94B81E2B1A313BF9001901ED /* MonsterStep-3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "MonsterStep-3.wav"; sourceTree = "<group>"; };
 		94C0D9671A0EC1FB0065A981 /* land-2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "land-2.wav"; sourceTree = "<group>"; };
 		94C0D96A1A0ECCA40065A981 /* land-1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "land-1.wav"; sourceTree = "<group>"; };
 		94C2A4C41918C0C4005A85C1 /* ActionSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSprite.h; sourceTree = "<group>"; };
@@ -955,6 +961,9 @@
 		9485C07B192452A000B0075E /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				94B81E291A313BF9001901ED /* MonsterStep-1.wav */,
+				94B81E2A1A313BF9001901ED /* MonsterStep-2.wav */,
+				94B81E2B1A313BF9001901ED /* MonsterStep-3.wav */,
 				9429FF681A2EC3860069E28C /* menu-move2.mp3 */,
 				9429FF1E1A2D364B0069E28C /* slice-1.wav */,
 				94C0D96A1A0ECCA40065A981 /* land-1.wav */,
@@ -1296,8 +1305,8 @@
 				94C2A4C51918C0C4005A85C1 /* ActionSprite.m */,
 				942D1CD418FF80FD00FFAE25 /* Player.h */,
 				942D1CD518FF80FD00FFAE25 /* Player.m */,
-				9488C851193D447100FDA747 /* TestMonster.h */,
-				9488C852193D447100FDA747 /* TestMonster.m */,
+				9488C851193D447100FDA747 /* Torizo.h */,
+				9488C852193D447100FDA747 /* Torizo.m */,
 				94A2FA6019F891010098EF2D /* Ghost.h */,
 				94A2FA6119F891010098EF2D /* Ghost.m */,
 				94F100E418FE5F78007D5A05 /* AppDelegate.h */,
@@ -2045,6 +2054,7 @@
 				94720C171925FE3100302A38 /* bubble2.tmx in Resources */,
 				9429FF571A2EADC80069E28C /* Icon-72.png in Resources */,
 				94720C131925FA5300302A38 /* smallChamber1.tmx in Resources */,
+				94B81E2C1A313BF9001901ED /* MonsterStep-1.wav in Resources */,
 				9429FF3E1A2EACE60069E28C /* button.png in Resources */,
 				9429FF251A2EAC370069E28C /* platformRock-1.png in Resources */,
 				9429FF5B1A2EADC80069E28C /* Icon-120.png in Resources */,
@@ -2063,7 +2073,9 @@
 				9429FF301A2EACA80069E28C /* Torizo.plist in Resources */,
 				9429FF1D1A2D33840069E28C /* DashAttack2.plist in Resources */,
 				9486603D1933E7AD003FAE62 /* MagicSword1.png in Resources */,
+				94B81E2E1A313BF9001901ED /* MonsterStep-3.wav in Resources */,
 				9429FF441A2EACE60069E28C /* healthBar.png in Resources */,
+				94B81E2D1A313BF9001901ED /* MonsterStep-2.wav in Resources */,
 				9420BB58192ED37B00F3BFCA /* Cathedral2Edited.png in Resources */,
 				9429FF2D1A2EAC960069E28C /* Ghost1.png in Resources */,
 				9482A8E5192A9EFD000A935E /* trees.tsx in Resources */,
@@ -2105,7 +2117,7 @@
 				94F1FED118FE5F76007D5A05 /* CCNodeColor.m in Sources */,
 				94F1FFAA18FE5F76007D5A05 /* TransformUtils.m in Sources */,
 				94F1FF4B18FE5F76007D5A05 /* CCTextureCache.m in Sources */,
-				9488C853193D447100FDA747 /* TestMonster.m in Sources */,
+				9488C853193D447100FDA747 /* Torizo.m in Sources */,
 				94F1FF7618FE5F76007D5A05 /* CCAppDelegate.m in Sources */,
 				94F1FF7A18FE5F76007D5A05 /* CCDirectorMac.m in Sources */,
 				94F1FEAE18FE5F75007D5A05 /* ccDeprecated.m in Sources */,

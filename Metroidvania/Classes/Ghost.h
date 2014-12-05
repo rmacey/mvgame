@@ -1,5 +1,5 @@
 //
-//  TestMonster.h
+//  Ghost.h
 //  Metroidvania
 //
 //  Created by Ryan Macey on 6/2/14.
@@ -10,7 +10,6 @@
 
 @interface Ghost : ActionSprite
 
--(void)reverseDirection;
 @property(nonatomic, assign)int stepTimer;
 
 @property(nonatomic,strong)id disappearAction;

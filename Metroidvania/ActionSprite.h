@@ -9,8 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "Attack.h"
+#import "MovableObject.h"
 
-@interface ActionSprite : CCSprite <AttackDelegate> {
+@interface ActionSprite : MovableObject <AttackDelegate> {
     }
 
 //actions (for animations)
@@ -22,6 +23,8 @@
 @property(nonatomic,strong)id deathAction;
 @property(nonatomic,strong)id flyAction;
 @property(nonatomic,strong)id crouchAction;
+@property(nonatomic,strong)id blockAction;
+@property(nonatomic,strong)id movingBlockAction;
 @property(nonatomic,strong)id fallingAction;
 
 @property(nonatomic,strong)id groundAttackAction;
@@ -49,6 +52,7 @@
 @property(nonatomic,assign)StatusState statusState;
 @property (nonatomic, assign) BOOL isIntangible;
 @property (nonatomic, assign) BOOL onGround;
+@property (nonatomic, assign) BOOL onPlatform;
 
 //attributes
 @property(nonatomic, assign)double runSpeed;
@@ -58,7 +62,7 @@
 @property(nonatomic, assign)double airJumpStrength;
 @property(nonatomic, assign)float jumpRetainVelocity;
 @property(nonatomic, assign)int airJumps;
-@property(nonatomic, assign)double gravityForce;
+//@property(nonatomic, assign)double gravityForce;
 
 @property(nonatomic, assign)double health;
 @property(nonatomic, assign)double maxHealth;
@@ -66,12 +70,12 @@
 @property(nonatomic, assign)double maxMana;
 @property(nonatomic, assign)double manaRegen;
 
-@property(nonatomic, assign)double maxRunSpeed;
-@property(nonatomic, assign)double maxJumpSpeed;
-@property(nonatomic, assign)double maxFallSpeed;
-@property(nonatomic, assign)double weight;
-@property(nonatomic, assign)double friction;
-@property(nonatomic, assign)double acceleration;
+//@property(nonatomic, assign)double maxRunSpeed;
+//@property(nonatomic, assign)double maxJumpSpeed;
+//@property(nonatomic, assign)double maxFallSpeed;
+//@property(nonatomic, assign)double weight;
+//@property(nonatomic, assign)double friction;
+//@property(nonatomic, assign)double acceleration;
 @property(nonatomic, assign)double XScale;
 @property(nonatomic, assign)double YScale;
 
@@ -79,10 +83,10 @@
 
 
 //movement
-@property(nonatomic,assign)CGPoint velocity;
-@property(nonatomic,assign)CGPoint desiredPosition;
-@property (nonatomic, assign) BOOL moveRight;
-@property (nonatomic, assign) BOOL moveLeft;
+//@property(nonatomic,assign)CGPoint velocity;
+//@property(nonatomic,assign)CGPoint desiredPosition;
+//@property (nonatomic, assign) BOOL moveRight;
+//@property (nonatomic, assign) BOOL moveLeft;
 
 //measurements
 @property(nonatomic,assign)double centerToSides;
@@ -94,13 +98,14 @@
 //action methods
 -(void)makeIdle;
 -(void)crouch;
+-(void)block;
 
 
 -(void)hurtWithDamage:(double)damage andStun:(double)stun;
 -(void)death;
--(void)moveWithTime:(CCTime)dt;
--(void)applyImpulseWithKnockback:(float)knockback andDirection:(float)direction;
--(void)applyImpulse: (CGPoint)impulse;
+//-(void)moveWithTime:(CCTime)dt;
+//-(void)applyImpulseWithKnockback:(float)knockback andDirection:(float)direction;
+//-(void)applyImpulse: (CGPoint)impulse;
 -(void)reverseIntangibility;
 -(void)reverseDirection;
 -(void)orientSprite;

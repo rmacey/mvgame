@@ -10,9 +10,14 @@
 #import "CCAnimation.h"
 
 @implementation Player
+{
+    int stepTimer;
+    float stepTimerInterval;
+}
 
 -(id)init
 {
+    self = [super init];
     
     self.currentAttackSequence = 0;
     [self initWeapons];
@@ -20,19 +25,18 @@
     self.rightItem.groundAttack2.attackType = attackTypeGround;
     self.rightItem.groundAttack3.attackType = attackTypeGround;
     self.rightItem.dashAttack.attackType = attackTypeDash;
-    //self.rightItem.dashAttack2.attackType = attackTypeDash;
     self.rightItem.airAttack.attackType = attackTypeAir;
     self.activeAttacks = [[NSMutableArray alloc] init];
     
-    self.velocity = ccp(0.0, 0.0);
+    //self.velocity = ccp(0.0, 0.0);
     self.runSpeed = 3500.0f;
     self.airSpeed = 3000.0f;
     self.groundJumpStrength = 1000.0f;
     self.airJumpStrength = 1000.0f;
-    self.weight = 0.0f;
-    self.acceleration = 0.0f;
-    self.gravityForce = 1500;
-    self.friction = 0.90;
+    //self.weight = 0.0f;
+    //self.acceleration = 0.0f;
+    self.gravityForce = 1500; // 8.334 equivalent to 1500 if delta time is used
+    //self.friction = 0.90;
     
     self.maxHealth = 100.0;
     self.health = self.maxHealth;
@@ -40,12 +44,12 @@
     self.mana = self.maxMana;
     self.manaRegen = 0.1;
     self.airJumpMana = 0;
-    self.airJumps = 1;
+    self.airJumps = 3;
     
     self.XScale = 1.5;
     self.YScale = 1.5;
-    self.centerToBottomOriginal = 45;
-    self.centerToSidesOriginal = 23;
+    self.centerToBottomOriginal = 44;
+    self.centerToSidesOriginal = 22;
     self.centerToBottom = self.centerToBottomOriginal;
     self.centerToSides = self.centerToSidesOriginal;
     self.hurtBox = [self createBoundingBoxWithOrigin:ccp(-self.centerToSides, -self.centerToBottom) size:CGSizeMake(self.centerToSides * 2, self.centerToBottom * 2)];
@@ -54,9 +58,9 @@
     self.isIntangible = NO;
     
     //safety clamps
-    self.maxFallSpeed = -2700.0f;
-    self.maxJumpSpeed = 2700.0f;
-    self.maxRunSpeed = 2700.0f;
+    //self.maxFallSpeed = -2700.0f;
+    //self.maxJumpSpeed = 2700.0f;
+    //self.maxRunSpeed = 2700.0f;
     
     [self prepareAnimations];
     CCSpriteFrame *initialSpriteFrame = [[CCSpriteFrameCache sharedSpriteFrameCache]
@@ -349,6 +353,25 @@
     }
     CCAnimation *crouchAttackAnimation = [CCAnimation animationWithSpriteFrames: crouchAttackFrames delay:0.04f];
     self.crouchAttackAction = [CCActionAnimate actionWithAnimation:crouchAttackAnimation];
+    
+    NSMutableArray *blockFrames = [NSMutableArray array];
+    //set up animation for normal horizontal ground movement
+    for(int i = 0; i < 1; i++)
+    {
+        [blockFrames addObject:
+         [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"ninjaSwordBlock-1.png"]];
+    }
+    CCAnimation *blockAnimation = [CCAnimation animationWithSpriteFrames: blockFrames delay:0.04f];
+    self.blockAction = [CCActionAnimate actionWithAnimation:blockAnimation];
+    
+    NSMutableArray *blockMoveFrames = [NSMutableArray array];
+    for(int i=1; i<=4; i++)
+    {
+        [blockMoveFrames addObject:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:@"ninjaSwordBlockMove-%d.png", i]]];
+    }
+    CCAnimation *blockMoveAnimation = [CCAnimation animationWithSpriteFrames:blockMoveFrames delay:0.15f];
+    self.movingBlockAction = [CCActionRepeatForever actionWithAction:[CCActionAnimate actionWithAnimation:blockMoveAnimation]];
+    
 }
 
 -(void)update:(CCTime)dt
@@ -358,7 +381,29 @@
         self.currentAttackSequence = 0;
     
     if(self.onGround)
+    {
         self.currentJumpCount = 0;
+        
+        if(self.movementState == movementStateRun && self.attackState == attackStateNone)
+        {
+            if(stepTimer == 0)
+            {
+                if(self.statusState == statusStateBlock)
+                    stepTimer = 185000 / self.runSpeed;
+                else
+                    stepTimer = 101500 / self.runSpeed;
+                
+                int randomSound = random_range(1, 6);
+                [[OALSimpleAudio sharedInstance] playEffect:[NSString stringWithFormat:@"MutedStep-%d.wav", randomSound] volume:1.0 pitch:2.0 pan:0.0 loop:NO];
+            }
+            else
+            {
+                stepTimer--;
+            }
+        }
+        else
+            stepTimer = 0;
+    }
     else if (self.velocity.y < -1500 && self.attackState == attackStateNone && self.statusState == statusStateNone && self.currentJumpCount == 0)
     {
         [self stopAllActions];
@@ -412,7 +457,8 @@
 
 -(void)executeLeftButtonAction
 {
-    //add later for shielding, two-handing etc.
+    if(self.onGround && self.noInputFrames == 0 && self.statusState != statusStateCrouch)
+        [self block];
 }
 
 -(void)executeJumpButtonAction
@@ -532,7 +578,10 @@
     [self stopAllActions];
     [self runAction:self.airJumpAction];
     self.velocity = ccp(self.velocity.x, 0.0);
-    self.doubleJumpSound = [[OALSimpleAudio sharedInstance] playEffect:@"SpinningLoop.wav" volume:0.8 pitch:1.0 pan:0.0 loop:YES];
+    
+    if(self.doubleJumpSound == nil)
+        self.doubleJumpSound = [[OALSimpleAudio sharedInstance] playEffect:@"SpinningLoop.wav" volume:0.8 pitch:1.0 pan:0.0 loop:YES];
+    
     [self applyImpulse:ccp(0.0,self.airJumpStrength)];
     self.mana -= self.airJumpMana;
     self.noInputFrames = 6;

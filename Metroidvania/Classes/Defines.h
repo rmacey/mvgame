@@ -46,6 +46,7 @@ typedef enum _StatusState
 {
     statusStateNone = 0,
     statusStateCrouch,
+    statusStateBlock,
     statusStateHurt,
     statusStateDeath,
 } StatusState;

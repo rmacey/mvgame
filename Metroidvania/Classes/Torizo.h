@@ -1,5 +1,5 @@
 //
-//  TestMonster.h
+//  Torizo.h
 //  Metroidvania
 //
 //  Created by Ryan Macey on 6/2/14.
@@ -8,7 +8,7 @@
 
 #import "ActionSprite.h"
 
-@interface TestMonster : ActionSprite
+@interface Torizo : ActionSprite
 
 -(void)reverseDirection;
 @property(nonatomic, assign)int stepTimer;

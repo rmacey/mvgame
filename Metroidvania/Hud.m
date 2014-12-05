@@ -32,28 +32,36 @@
         _dPad.userInteractionEnabled = YES;
         [self addChild:_dPad];
         
-        CCSpriteFrame *rightButtonSpriteFrame = [CCSpriteFrame frameWithImageNamed:@"button.png"];
-        _rightButton = [CCSprite spriteWithSpriteFrame:rightButtonSpriteFrame];
-        _rightButton.scale = 0.8f;
+        CCSpriteFrame *buttonSpriteFrame = [CCSpriteFrame frameWithImageNamed:@"button.png"];
+        _rightButton = [CCSprite spriteWithSpriteFrame:buttonSpriteFrame];
+        _rightButton.scale = 0.7f;
         _rightButton.anchorPoint = ccp(0,0);
-        _rightButton.position = ccp(900, 120);
+        _rightButton.position = ccp(922, 107);
         _rightButton.userInteractionEnabled = YES;
         [self addChild:_rightButton];
         
-        CCSpriteFrame *jumpButtonSpriteFrame = [CCSpriteFrame frameWithImageNamed:@"button.png"];
-        _jumpButton = [CCSprite spriteWithSpriteFrame:jumpButtonSpriteFrame];
-        _jumpButton.scale = 0.8f;
+
+        _leftButton = [CCSprite spriteWithSpriteFrame:buttonSpriteFrame];
+        _leftButton.scale = 0.7f;
+        _leftButton.anchorPoint = ccp(0,0);
+        _leftButton.position = ccp(827, 107);
+        _leftButton.userInteractionEnabled = YES;
+        [self addChild:_leftButton];
+        
+        
+
+        _jumpButton = [CCSprite spriteWithSpriteFrame:buttonSpriteFrame];
+        _jumpButton.scale = 0.7f;
         _jumpButton.anchorPoint = ccp(0,0);
-        _jumpButton.position = ccp(900, 20);
+        _jumpButton.position = ccp(875, 17);
         _jumpButton.userInteractionEnabled = YES;
         _jumpButton.opacity = 60;
         [self addChild:_jumpButton];
         
-        CCSpriteFrame *debugButtonSpriteFrame = [CCSpriteFrame frameWithImageNamed:@"button.png"];
-        _debugButton = [CCSprite spriteWithSpriteFrame:debugButtonSpriteFrame];
+        _debugButton = [CCSprite spriteWithSpriteFrame:buttonSpriteFrame];
         _debugButton.scale = 0.4f;
         _debugButton.anchorPoint = ccp(0,0);
-        _debugButton.position = ccp(900, 400);
+        _debugButton.position = ccp(880, 400);
         _debugButton.userInteractionEnabled = YES;
         _debugButton.opacity = 50;
         //[self addChild:_debugButton];

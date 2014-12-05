@@ -1,42 +1,43 @@
 //
-//  TestMonster.m
+//  Torizo.m
 //  Metroidvania
 //
 //  Created by Ryan Macey on 6/2/14.
 //  Copyright (c) 2014 Ryan Macey. All rights reserved.
 //
 
-#import "TestMonster.h"
+#import "Torizo.h"
 #import "CCAnimation.h"
 
-@implementation TestMonster
+@implementation Torizo
 
 -(id)init
 {
+    self = [super init];
     [self prepareAnimations];
     CCSpriteFrame *initialSpriteFrame = [[CCSpriteFrameCache sharedSpriteFrameCache]
                                          spriteFrameByName:@"Torizo-Right-1.png"];
     
-    self.velocity = ccp(0.0, 0.0);
+   // self.velocity = ccp(0.0, 0.0);
     self.runSpeed = 2400.0f;
     self.groundJumpStrength = 450.0f;
     self.airSpeed = 600.0f;
     self.XScale = 1.5;
     self.YScale = 1.5;
     
-    self.acceleration = 0.0f;
+    //self.acceleration = 0.0f;
     
-    self.friction = 0.90;
-    self.maxJumpSpeed = 2000.0f;
-    self.maxRunSpeed = 2400.0f;
+    //self.friction = 0.90;
+   // self.maxJumpSpeed = 2000.0f;
+   // self.maxRunSpeed = 2400.0f;
  
     self.attackState = attackStateNone;
     self.statusState = statusStateNone;
     self.movementState = movementStateRun;
     
     self.health = 200.0;
-    self.weight = 200.0f;
-    self.maxFallSpeed = -1200.0f;
+   // self.weight = 200.0f;
+   // self.maxFallSpeed = -1200.0f;
     
     self.gravityForce = 650.0f;
     
@@ -89,28 +90,6 @@
     }
     CCAnimation *idleAnimation = [CCAnimation animationWithSpriteFrames: idleFrames delay:0.01f];
     self.idleAction = [CCActionAnimate actionWithAnimation:idleAnimation];
-    
-    
-//    NSMutableArray *attackFrames = [NSMutableArray array];
-//    //set up animation for normal horizontal ground movement
-//    for(int i = 1; i <= 5; i++)
-//    {
-//        [attackFrames addObject:
-//         [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:@"ninjaGroundAttack%d.png", i]]];
-//    }
-//    CCAnimation *attackAnimation = [CCAnimation animationWithSpriteFrames: attackFrames delay:0.04f];
-//    self.attackAction = [CCActionAnimate actionWithAnimation:attackAnimation];
-//    
-//    NSMutableArray *airAttackFrames = [NSMutableArray array];
-//    //set up animation for normal horizontal ground movement
-//    for(int i = 1; i <= 5; i++)
-//    {
-//        [airAttackFrames addObject:
-//         [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:@"ninjaAirAttack%d.png", i]]];
-//    }
-//    CCAnimation *airAttackAnimation = [CCAnimation animationWithSpriteFrames: airAttackFrames delay:0.05f];
-//    self.airAttackAction = [CCActionAnimate actionWithAnimation:airAttackAnimation];
-    
 }
 
 -(void)update:(CCTime)dt
@@ -126,8 +105,8 @@
         if(self.stepTimer == 0)
         {
             self.stepTimer = 50;
-            int randomSound = random_range(1, 4);
-            [[OALSimpleAudio sharedInstance] playEffect:[NSString stringWithFormat:@"SwordWhoosh%d.wav", randomSound] volume:1.5 pitch:0.2 pan:0.0 loop:NO];
+            int randomSound = random_range(1, 3);
+            [[OALSimpleAudio sharedInstance] playEffect:[NSString stringWithFormat:@"MonsterStep-%d.wav", randomSound] volume:0.3 pitch:1.0 pan:0.0 loop:NO];
         }
         else
         {
@@ -146,7 +125,7 @@
         self.stepTimer = 0;
         [self applyImpulse:ccp(self.velocity.x, 820.00f)];
         self.movementState = movementStateJump;
-        [[OALSimpleAudio sharedInstance] playEffect:@"playerDeath.mp3" volume:1.0 pitch:0.27 pan:0.0 loop:NO];
+        [[OALSimpleAudio sharedInstance] playEffect:@"playerDeath.mp3" volume:0.65 pitch:0.27 pan:0.0 loop:NO];
     }
     
     if(self.movementState != movementStateJump && self.onGround)

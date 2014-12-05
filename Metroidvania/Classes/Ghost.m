@@ -1,5 +1,5 @@
 //
-//  TestMonster.m
+//  Ghost.m
 //  Metroidvania
 //
 //  Created by Ryan Macey on 6/2/14.
@@ -22,7 +22,7 @@
     self.XScale = 2.0;
     self.YScale = 2.0;
     
-    self.acceleration = 0.0f;
+    //self.acceleration = 0.0f;
     
     int rand = random_range(1, 2);
     if (rand==1)
@@ -30,15 +30,12 @@
     else
         self.moveLeft = YES;
     
-    self.friction = 0.90;
-    self.maxJumpSpeed = 2000.0f;
-    self.maxRunSpeed = 2400.0f;
     self.movementState = movementStateIdle;
     self.health = 50.0;
-    self.weight = 200.0f;
-    self.maxFallSpeed = -1200.0f;
+    self.obeysFriction = NO;
+    self.obeysGravity = NO;
     
-    self.gravityForce = 0;
+   
     
     self.centerToBottom = 25.0f;
     self.centerToSides = 22.0f;
@@ -109,27 +106,6 @@
 }
 
 
--(void)moveWithTime:(CCTime)dt
-{
-    
-    
-        CGPoint movementStep;
-        if (self.moveRight)
-        {
-            CGPoint forwardMove = ccp(self.airSpeed + self.acceleration, 0.0);
-            movementStep = ccpMult(forwardMove, dt);
-            self.velocity = ccpAdd(self.velocity, movementStep);
-        }
-        if (self.moveLeft)
-        {
-            CGPoint backwardMove = ccp(0.0 - self.airSpeed - self.acceleration, 0.0);
-            movementStep = ccpMult(backwardMove, dt); //1
-            self.velocity = ccpAdd(self.velocity, movementStep);
-        }
-
-        [self orientSprite];
-}
-
 -(void)hurtWithDamage:(double)damage andStun:(double)stun
 {
     [super hurtWithDamage:damage andStun:stun];
@@ -139,6 +115,8 @@
 
 -(void)update:(CCTime)dt
 {
+    [super update:dt];
+    
     self.stepTimer--;
     
     if(self.stepTimer <= 480)
@@ -190,16 +168,16 @@
     
     if(self.movementState == movementStateRun)
     {
-        [self moveWithTime:dt];
+        [self moveWithSpeed:self.airSpeed andTime:dt];
     }
 
-
+    [self orientSprite];
     
-    CGPoint gravity = ccp(0.0, -self.gravityForce);
-    CGPoint gravityStep = ccpMult(gravity, dt);
-    self.velocity = ccpAdd(self.velocity, gravityStep);
-    CGPoint stepVelocity = ccpMult(self.velocity, dt);
-    self.desiredPosition = ccpAdd(self.position, stepVelocity);
+//    CGPoint gravity = ccp(0.0, -self.gravityForce);
+//    CGPoint gravityStep = ccpMult(gravity, dt);
+//    self.velocity = ccpAdd(self.velocity, gravityStep);
+//    CGPoint stepVelocity = ccpMult(self.velocity, dt);
+//    self.desiredPosition = ccpAdd(self.position, stepVelocity);
     
 }
 -(void)death

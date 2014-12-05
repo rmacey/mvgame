@@ -14,7 +14,7 @@
 -(id)init
 {
     self.velocity = ccp(0,0);
-    self.friction = 54; //corresponds to 2% velocity reduction per frame at 60fps
+    self.friction = 0.9; //when using dt 54 corresponds to 0.9 (2% velocity reduction) per frame at 60fps, at 180fps for some reason 174-175 is roughly correct
     self.gravityForce = 0;
     self.obeysGravity = YES;
     self.obeysFriction = YES;
@@ -25,14 +25,18 @@
 
 -(void)update:(CCTime)dt
 {
+    
     if(self.obeysFriction)
         [self applyFriction:dt];
+    
+    [self applyVelocitySafetyClamp];
 }
 
 -(void)fixedUpdate:(CCTime)dt
-{
+{    
     if(self.obeysGravity)
         [self applyGravity:dt];
+
     
     CGPoint stepVelocity = ccpMult(self.velocity, dt);
     self.desiredPosition = ccpAdd(self.position, stepVelocity);
@@ -51,7 +55,6 @@
     
     self.velocity = ccpAdd(self.velocity, stepMovement);
     
-    [self applyVelocitySafetyClamp];
 }
 
 -(void)applyImpulseWithKnockback:(float)knockback andDirection:(float)direction
@@ -88,16 +91,16 @@
 -(void)applyFriction:(CCTime)dt
 
 {
-    self.velocity = ccp(self.velocity.x * self.friction * dt, self.velocity.y);
+    self.velocity = ccp(self.velocity.x * self.friction, self.velocity.y);
 }
 
 -(void)applyVelocitySafetyClamp
 {
     //first value is maximum speed going left, second is maximum falling speed
-    CGPoint minMovement = ccp(-4000, -4000);
+    CGPoint minMovement = ccp(-3500, -3500);
     
     //first value is maximum speed going right, second is maximum jump speed
-    CGPoint maxMovement = ccp(4000, 4000);
+    CGPoint maxMovement = ccp(3500, 3500);
     
     self.velocity = ccpClamp(self.velocity, minMovement, maxMovement);
 }

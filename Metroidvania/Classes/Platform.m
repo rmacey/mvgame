@@ -22,11 +22,15 @@
     
     CGFloat movementSpeed;
     NSString *type;
-    
 }
 
 - (id)initWithImageNamed:(NSString *)name forPlatformType:(NSString*)platformType withSpeed:(CGFloat)speed andDistance:(CGFloat)distanceToMove;
 {
+    self = [super init];
+    
+    self.obeysGravity = NO;
+    self.obeysFriction = NO;
+    
     CCSpriteFrame *initialSpriteFrame = [CCSpriteFrame frameWithImageNamed:[NSString stringWithFormat:@"%@.png", name]];
     moveLeft = nil;
     moveRight = nil;
@@ -37,27 +41,17 @@
     _distance = distanceToMove;
 
     if([type isEqual:@"horizontal"])
-    {
-        //int rand = random_range(1, 2);
-        //if (rand==1)
             moveRight = YES;
-        //else
-          //  moveLeft = YES;
-    }
     else if ([type isEqual:@"vertical"])
-    {
-        //int rand = random_range(1, 2);
-        //if (rand==1)
             moveUp = YES;
-        //else
-        //    moveDown = YES;
-    }
+    
     
     return [self initWithSpriteFrame:initialSpriteFrame];
 }
 
 -(void)update:(CCTime)dt
-{    
+{
+    [super update:dt];
     [self moveWithTime:dt];
  
     CGPoint stepVelocity = ccpMult(self.velocity, dt);

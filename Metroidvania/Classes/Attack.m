@@ -107,7 +107,7 @@
     int sizeY = [newSizeInfo[1] intValue];
     _hitBox.original.size = CGSizeMake(sizeX, sizeY);
     
-  //  NSLog(@"hitbox Moved");
+    //NSLog(@"hitbox Moved");
 }
 -(void)transformActualHitbox
 {
