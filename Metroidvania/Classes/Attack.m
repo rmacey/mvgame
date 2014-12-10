@@ -53,6 +53,7 @@
     copy.totalPossibleSounds = self.totalPossibleSounds;
     copy.currentFrame = self.currentFrame;
     copy.attackType = self.attackType;
+    copy.IASA = self.IASA;
     copy.hitBoxTransformations = [NSMutableDictionary dictionaryWithDictionary:self.hitBoxTransformations];
     copy.specialProperties = [NSMutableDictionary  dictionaryWithDictionary:self.specialProperties];
     copy.ownerSizeAdjustment = [NSMutableArray arrayWithArray:self.ownerSizeAdjustment];

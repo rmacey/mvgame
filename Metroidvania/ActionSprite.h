@@ -79,7 +79,7 @@
 @property(nonatomic, assign)double XScale;
 @property(nonatomic, assign)double YScale;
 
-@property(nonatomic, assign)double noInputFrames;
+@property(nonatomic, assign)int noInputFrames;
 
 
 //movement

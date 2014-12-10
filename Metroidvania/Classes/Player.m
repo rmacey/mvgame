@@ -29,7 +29,7 @@
     self.activeAttacks = [[NSMutableArray alloc] init];
     
     //self.velocity = ccp(0.0, 0.0);
-    self.runSpeed = 3500.0f;
+    self.runSpeed = 5000.0f;
     self.airSpeed = 3000.0f;
     self.groundJumpStrength = 1000.0f;
     self.airJumpStrength = 1000.0f;
@@ -44,7 +44,7 @@
     self.mana = self.maxMana;
     self.manaRegen = 0.1;
     self.airJumpMana = 0;
-    self.airJumps = 3;
+    self.airJumps = 2;
     
     self.XScale = 1.5;
     self.YScale = 1.5;
@@ -389,7 +389,7 @@
             if(stepTimer == 0)
             {
                 if(self.statusState == statusStateBlock)
-                    stepTimer = 185000 / self.runSpeed;
+                    stepTimer = 200000 / self.runSpeed;
                 else
                     stepTimer = 101500 / self.runSpeed;
                 
@@ -426,7 +426,7 @@
             else if(self.currentAttackSequence == 2)
                 retrievedAttack = weapon.dashAttack3;
         }
-        else if (self.statusState == statusStateCrouch && self.noInputFrames == 0)
+        else if (self.statusState == statusStateCrouch)
         {
             retrievedAttack = weapon.crouchAttack;
         }
@@ -440,7 +440,7 @@
                 retrievedAttack = weapon.groundAttack3;
         }
     }
-    else if (self.onGround == FALSE && self.noInputFrames == 0)
+    else if (self.onGround == FALSE)
         retrievedAttack = weapon.airAttack;
     
     Attack *attackCopy = [retrievedAttack mutableCopy];
@@ -450,9 +450,17 @@
 #pragma mark - ACTIONS
 -(void)executeRightButtonAction
 {
-    Attack *attack = [self retrieveAttackForWeapon:self.rightItem];
-    if(attack != nil)
-        [self executeAttack:attack];
+    Attack *lastAttack = [self.activeAttacks lastObject];
+    if(lastAttack.currentFrame >= lastAttack.IASA || self.noInputFrames == 0)
+    {
+        Attack *attack = [self retrieveAttackForWeapon:self.rightItem];
+        if(attack != nil)
+            [self executeAttack:attack];
+    }
+    else
+    {
+        //save space for buffering attacks, or interrupting attacks in a chain
+    }
 }
 
 -(void)executeLeftButtonAction
@@ -534,7 +542,10 @@
         }
     }
     else if (self.statusState == statusStateCrouch)
+    {
+        self.attackState = attackStateCrouchingAttack;
         [self runAction:self.crouchAttackAction];
+    }
 }
 
 -(void)applySpecialPropertiesForAttack:(Attack *)attack

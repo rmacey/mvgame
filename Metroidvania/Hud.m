@@ -28,7 +28,7 @@
         _dPad.scale = 1.7f;
         _rightButton.anchorPoint = ccp(0,0);
         _dPad.position = ccp(108.8, 108.8);
-        _dPad.opacity = 60;
+        _dPad.opacity = .50;
         _dPad.userInteractionEnabled = YES;
         [self addChild:_dPad];
         
@@ -38,6 +38,7 @@
         _rightButton.anchorPoint = ccp(0,0);
         _rightButton.position = ccp(922, 107);
         _rightButton.userInteractionEnabled = YES;
+         _rightButton.opacity = .50;
         [self addChild:_rightButton];
         
 
@@ -46,6 +47,7 @@
         _leftButton.anchorPoint = ccp(0,0);
         _leftButton.position = ccp(827, 107);
         _leftButton.userInteractionEnabled = YES;
+         _leftButton.opacity = .50;
         [self addChild:_leftButton];
         
         
@@ -55,7 +57,7 @@
         _jumpButton.anchorPoint = ccp(0,0);
         _jumpButton.position = ccp(875, 17);
         _jumpButton.userInteractionEnabled = YES;
-        _jumpButton.opacity = 60;
+        _jumpButton.opacity = .50;
         [self addChild:_jumpButton];
         
         _debugButton = [CCSprite spriteWithSpriteFrame:buttonSpriteFrame];
@@ -73,41 +75,49 @@
         [self addChild:self.testLabel];
         
         
-        self.statusBars = [CCSprite spriteWithImageNamed:@"statusBars.png"];
-        self.statusBars.anchorPoint = ccp(0,0);
-        self.statusBars.scale = 1.6;
-        self.statusBars.position = ccp(20,650);
-        [self addChild:self.statusBars];
+//        self.statusBars = [CCSprite spriteWithImageNamed:@"statusBars.png"];
+//        self.statusBars = [[CCSprite alloc] init];
+//        self.statusBars.anchorPoint = ccp(0,0);
+//        self.statusBars.scale = 1.6;
+//        self.statusBars.position = ccp(200,600);
+//        [self addChild:self.statusBars];
         
         CCSprite *healthBarSprite = [CCSprite spriteWithImageNamed:@"healthBar.png"];
         _healthBar = [CCProgressNode progressWithSprite:healthBarSprite];
         _healthBar.type = CCProgressNodeTypeBar;
         _healthBar.midpoint = ccp(0,0);
         _healthBar.barChangeRate = ccp(1, 0);
+        //_healthBar.positionType = CCPositionTypeNormalized;
+        //_healthBar.position = ccp(0.613f, 0.795f);
         
-        _healthBar.positionType = CCPositionTypeNormalized;
-        _healthBar.position = ccp(0.613f, 0.795f);
-        [self.statusBars addChild:_healthBar];
+        _healthBar.scale = 2.5;
+        _healthBar.position = ccp(135, 750);
+        [self addChild:_healthBar];
+        
         
         CCSprite *energyBarSprite = [CCSprite spriteWithImageNamed:@"energyBar.png"];
         _energyBar = [CCProgressNode progressWithSprite:energyBarSprite];
         _energyBar.type = CCProgressNodeTypeBar;
         _energyBar.midpoint = ccp(0,0);
         _energyBar.barChangeRate = ccp(1, 0);
+        //_energyBar.positionType = CCPositionTypeNormalized;
+        //_energyBar.position = ccp(0.613f, 0.5f);
         
-        _energyBar.positionType = CCPositionTypeNormalized;
-        _energyBar.position = ccp(0.613f, 0.5f);
-        [self.statusBars addChild:_energyBar];
+        _energyBar.scale = 2.5;
+        _energyBar.position = ccp(135, 720);
+        [self addChild:_energyBar];
         
         CCSprite *manaBarSprite = [CCSprite spriteWithImageNamed:@"manaBar.png"];
         _manaBar = [CCProgressNode progressWithSprite:manaBarSprite];
         _manaBar.type = CCProgressNodeTypeBar;
         _manaBar.midpoint = ccp(0,0);
         _manaBar.barChangeRate = ccp(1, 0);
+        //_manaBar.positionType = CCPositionTypeNormalized;
+        //_manaBar.position = ccp(0.613f, 0.205f);
         
-        _manaBar.positionType = CCPositionTypeNormalized;
-        _manaBar.position = ccp(0.613f, 0.205f);
-        [self.statusBars addChild:_manaBar];
+        _manaBar.scale = 2.5;
+        _manaBar.position = ccp(135, 690);
+        [self addChild:_manaBar];
     }
     
     return self;

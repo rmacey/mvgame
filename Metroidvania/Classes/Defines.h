@@ -40,6 +40,7 @@ typedef enum _AttackState
     attackStateAirAttack,
     attackStateFallingAttack,
     attackStateSpecialAttack,
+    attackStateCrouchingAttack,
 } AttackState;
 
 typedef enum _StatusState

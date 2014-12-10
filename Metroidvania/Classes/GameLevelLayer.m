@@ -60,10 +60,10 @@
         player = [[Player alloc] init];
         player.scaleX = player.XScale;
         player.scaleY = player.YScale;
-        entrancePoint = ccp(18*32,88*32);
+        entrancePoint = ccp(59*32,5*32);
         
         activeEnemies = [[NSMutableArray alloc] init];
-        [self loadMapNamed:@"CryptShaft.tmx" withEntrancePoint:entrancePoint];
+        [self loadMapNamed:@"HallOfCandles.tmx" withEntrancePoint:entrancePoint];
         
         [hud updateBar:hud.healthBar ToPercentage:player.health/player.maxHealth];
         [hud updateBar:hud.energyBar ToPercentage:1];
@@ -291,7 +291,8 @@
     //[self checkAttackCollisions];
     [self setViewpointCenter:player.position];
     
- //   [hud updateLabel:hud.testLabel withValue:[NSString stringWithFormat:@"velocity X = %f, velocity Y = %f", player.velocity.x, player.velocity.y]];
+//    [hud updateLabel:hud.testLabel withValue:[NSString stringWithFormat:@"velocity X = %f, velocity Y = %f", player.velocity.x, player.velocity.y]];
+    
 }
 
 -(void)fixedUpdate:(CCTime)dt
